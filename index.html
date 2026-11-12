@@ -26,6 +26,7 @@
 		gtag('js', new Date());
 		gtag('config', 'G-1YJQTD0RCG');
 	</script>
+  
 </head>
 <body class="chrome controls-visible  yui3-skin-sam guest-site signed-out public-page site">
 	<nav class="quick-access-nav" id="utcu_quickAccessNav">
@@ -308,7 +309,7 @@
 
                 $(".contact-form-modal-container form, .join-us-form-modal-container").find('input,textarea').val("");
                 $(".join-us-form-modal-container select").prop("selectedIndex", 0);
-                
+
                 $("button.btn-monospaced.ml-auto.navbar-toggler").css({
                     'z-index': '7'
                 });
@@ -532,12 +533,12 @@
         </div>
     </div>
 </div>
- <a tabindex="-1" class="left-contact-button" href="#" >
-        <span>contact</span>
-        <span>contact</span>    
+ <a tabindex="-1" aria-hidden="true" class="left-contact-button" href="#" >
+        <span aria-hidden="true" >contact</span>
+        <span aria-hidden="true" >contact</span>    
     </a>
     <div class="back-to-top">
-        <a  tabindex="-1" href="#" class="back-to-top-button">
+        <a  tabindex="-1" aria-hidden="true"  href="#" class="back-to-top-button">
             <span aria-hidden="true"  data-icon-2="">>
             </span>
             <span aria-hidden="true" data-icon-2="">>
@@ -1674,7 +1675,12 @@ FOR THIS INDUSTRY. BRUZE KNOCKED IT OUT OF THE PARK."
                     </div>
                   </div>
                 </div>
-
+                <input type="hidden" name="form" value="contact">
+                <div class="hp-field" aria-hidden="true">
+                <label>Leave this field empty
+                    <input type="text" name="hp_website" tabindex="-1" autocomplete="off">
+                </label>
+                </div>  
               </form>
 
             </div>
@@ -1864,6 +1870,12 @@ FOR THIS INDUSTRY. BRUZE KNOCKED IT OUT OF THE PARK."
                         <div class="lfr-ddm-form-pagination-controls">
                           <button class="float-right lfr-ddm-form-submit btn btn-primary" type="submit">Submit</button>
                         </div>
+                        <input type="hidden" name="form" value="join">
+                        <div class="hp-field" aria-hidden="true">
+                        <label>Leave this field empty
+                            <input type="text" name="hp_website" tabindex="-1" autocomplete="off">
+                        </label>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -1884,38 +1896,52 @@ FOR THIS INDUSTRY. BRUZE KNOCKED IT OUT OF THE PARK."
 </div>
 <form action="#" aria-hidden="true" class="hide" id="hrefFm" method="post" name="hrefFm"><span></span><input hidden type="submit"/></form>	</section>
 </div>
+  <script src="https://www.google.com/recaptcha/api.js?render=6LdDQR0uAAAAAIoWjWyhLHOKVDAiyx_x2XT1DR37"></script>
 	<script type="text/javascript">
 		// <![CDATA[
-				function submitBruzeForm(formID){
-    if (checkRequiredFields(formID)){
-        var formURL = $('#'+formID).attr('action');
-        var formData = {};
-        $('#'+formID).serializeArray().map(function(x){formData[x.name] = x.value;});
-        AUI().use('aui-io-request', function(A){
-            A.io.request(formURL, {
-                method: 'post',
-                dataType: 'json',
-                data: formData,
-                on: {
-                    success: function() {
-                        var successMessage = "Thanks, we'll get back to you soon."
-                        var buttonContainer = $("#" + formID ).find(".lfr-ddm-form-pagination-controls ");
-                        $(buttonContainer).addClass("success").find("button").html(successMessage).prop('disabled',true);
+var RECAPTCHA_SITE_KEY = '6LdDQR0uAAAAAIoWjWyhLHOKVDAiyx_x2XT1DR37';
+
+function submitBruzeForm(formID) {
+    var $form     = $('#' + formID);
+    var $button   = $form.find('button[type=submit]');
+    var $controls = $form.find('.lfr-ddm-form-pagination-controls');
+    var formName  = $form.find('input[name="form"]').val();   // "contact" or "join"
+
+    if ($button.prop('disabled')) { return; }                 // ignore double clicks
+    if (typeof grecaptcha === 'undefined' || !formName) { return; }
+
+    $form.find('.form-error').remove();
+    $form.find('[aria-invalid]').removeAttr('aria-invalid');
+    $button.prop('disabled', true);
+
+    grecaptcha.ready(function () {
+        grecaptcha.execute(RECAPTCHA_SITE_KEY, { action: formName }).then(function (token) {
+            $.post('send-form.php',
+                   $form.serialize() + '&g-recaptcha-response=' + encodeURIComponent(token),
+                   null, 'json')
+                .done(function () {
+                    $controls.addClass('success');
+                    $button.html("Thanks, we'll get back to you soon.");
+                })
+                .fail(function (xhr) {
+                    var res = xhr.responseJSON || {};
+                    var msg = res.error || 'Please check the highlighted fields.';
+                    if (res.errors) {
+                        $.each(res.errors, function (name) {
+                            $form.find('[name="' + name + '"]').attr('aria-invalid', 'true');
+                        });
+                        $form.find('[aria-invalid]').first().focus();
                     }
-                }
-            });
+                    $controls.before('<p class="form-error" role="alert">' + msg + '</p>');
+                    $button.prop('disabled', false);
+                });
+        }).catch(function () {
+            $controls.before('<p class="form-error" role="alert">Verification could not be completed. Please try again.</p>');
+            $button.prop('disabled', false);
         });
-    }
+    });
 }
-function checkRequiredFields(formID){
-    var form = $('#'+formID);
-    var requiredFields = form.find('input,textarea,select');
-    for (i=0; i < requiredFields.length; i++){
-        requiredFields[i].focus();
-    }
-    if (form.find('.has-error').length > 0) return false;
-    else return true;
-}
+
 function onElementInserted(containerSelector, elementSelector, callback){
     var onMutationsObserved = function(mutations){
         mutations.forEach(function(mutation){
@@ -1930,7 +1956,7 @@ function onElementInserted(containerSelector, elementSelector, callback){
     var target = $(containerSelector)[0];
     var config = {childList:true, subtree:true};
     var MutationObserver = window.MutationObserver || window.WebKitMutationObserver;
-    var observer = new MutationObserver(onMutationsObserved);    
+    var observer = new MutationObserver(onMutationsObserved);
     observer.observe(target, config);
 }
 function onElementVisible(containerSelector, callback){
@@ -1944,7 +1970,7 @@ function onElementVisible(containerSelector, callback){
     var target = $(containerSelector)[0];
     var config = {attributes: true, attributeFilter:['class']};
     var MutationObserver = window.MutationObserver || window.WebKitMutationObserver;
-    var observer = new MutationObserver(onMutationsObserved);    
+    var observer = new MutationObserver(onMutationsObserved);
     observer.observe(target, config);
 }
 $(document).ready(function(){

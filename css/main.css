@@ -5818,7 +5818,7 @@ body {
 
 .contact-form .portlet-forms form input {
     background: #112746;
-    height: 3rem;
+    height: 4rem;
     margin-left: 0;
     padding-left: 18px;
     width: 100%;
@@ -5826,7 +5826,8 @@ body {
     font-size: 14px;
     border: 0 solid #d90280;
     border-right: 0 solid #d90280;
-    border-left: 0 solid #d90280
+    border-left: 0 solid #d90280;
+    box-sizing:border-box;
 }
 
 .contact-form .portlet-forms form input::placeholder {

@@ -3570,3 +3570,50 @@ div#bruze-nav ul li a:focus{
 }
 
 .hp-field { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+/* Form errors: message from send-form.php and invalid-field highlight */
+
+/* Field error state — driven by aria-invalid (server errors and native validation) */
+.contact-form .form-group:has([aria-invalid="true"]),
+.join-us-form .form-group:has([aria-invalid="true"]) {
+  position: relative;
+}
+
+.contact-form .form-group:has([aria-invalid="true"]) .form-control,
+.join-us-form .form-group:has([aria-invalid="true"]) .form-control {
+  background: rgba(217, 2, 128, 0.7);
+  color: #ffc65c;
+}
+
+.contact-form .form-group:has([aria-invalid="true"]) .form-control::placeholder,
+.join-us-form .form-group:has([aria-invalid="true"]) .form-control::placeholder {
+  color: #ffc65c;
+}
+
+/* "!" badge outside the field's right edge, as before */
+.contact-form .form-group:has([aria-invalid="true"])::after,
+.join-us-form .form-group:has([aria-invalid="true"])::after {
+  content: "!";
+  content: "!" / "";              /* empty alt text so screen readers skip it */
+  position: absolute;
+  top: 32px;                      /* centred on the 4rem contact fields */
+  right: -38px;
+  transform: translateY(-50%);
+  width: 26px;
+  height: 26px;
+  display: grid;
+  place-content: center;
+  border-radius: 50%;
+  background: #d90280;
+  color: #122746;
+  font: 900 1.2rem 'Lato', sans-serif;
+}
+.join-us-form .form-group:has([aria-invalid="true"])::after {
+  top: 24px;                      /* 48px fields in the Join Us form */
+}
+.contact-form .form-error,
+.join-us-form .form-error {
+  margin: 0 0 1rem;
+  text-align: center;
+  font: 400 16px/1.4 'Lato', sans-serif;
+  color: #ffc65c;
+}

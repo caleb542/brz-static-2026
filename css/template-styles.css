@@ -985,6 +985,14 @@ ul.dots a:focus{
     font-family:'Lato', sans-serif;
     color:#ffc65c;
 }
+.contact-form .portlet-forms form textarea,
+.join-us-form .portlet-forms form textarea {
+     height: auto;
+     min-height: 9rem;
+     resize: vertical;
+    width:100%;
+    }
+
 .join-us-form .form-group, .join-us-form .portlet-forms form input, .join-us-form .portlet-forms form input:placeholder-shown, .join-us-form .portlet-forms .option-selected{
     font-size:18px;
 }
@@ -1029,9 +1037,39 @@ input.form-control.input-group-inset.input-group-inset-after {
     width: 112px;
     display: block;
 }
-.join-us-form .portlet-forms form input{
+.join-us-form .portlet-forms .form-control.select-field-trigger{
     height:48px;
-
+    width:100%;
+    margin:0;
+    padding:0 2.75em 0 1em;
+    border:0;
+    border-radius:0;
+    background-color:transparent;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512' fill='%23d90280'%3E%3Cpath d='M407.139 151.999l-136.136-136.136c-9.036-9.037-23.688-9.037-32.725 0l-136.136 136.136c-14.577 14.577-4.253 39.501 16.362 39.501h272.272c20.615 0 30.94-24.924 16.362-39.501z'/%3E%3Cpath d='M103.18 359.002l136.136 136.136c9.036 9.036 23.688 9.036 32.724 0l136.136-136.136c14.577-14.577 4.253-39.502-16.362-39.502h-272.272c-20.615 0-30.939 24.925-16.362 39.502z'/%3E%3C/svg%3E");
+    background-repeat:no-repeat;
+    background-position:right 1em center;
+    background-size:14px 14px;
+    -webkit-appearance:none;
+    appearance:none;
+    font-family:'Lato', sans-serif;
+    font-size:18px;
+    font-weight:400;
+    color:#ffc65c;
+    cursor:pointer;
+}
+.join-us-form .portlet-forms .form-control.select-field-trigger:has(option[value=""]:checked){
+    color:#d90280;
+}
+.join-us-form .portlet-forms .form-control.select-field-trigger option{
+    background:#112746;
+    color:#ffc65c;
+}
+.join-us-form .portlet-forms .form-control.select-field-trigger option[value=""]{
+    color:#d90280;
+}
+.join-us-form .portlet-forms .form-control.select-field-trigger:focus-visible{
+    outline:2px solid #ffc65c;
+    outline-offset:-2px;
 }
 .join-us-form .portlet-forms .form-control.select-field-trigger{
     height:48px;
@@ -1328,14 +1366,13 @@ border: 2px solid#d90280;
 }
 
 .contact-form .portlet-forms form .form-group.has-error input,
-.contact-form .portlet-forms form .form-group.has-error textarea,
-.join-us-form .portlet-forms form .form-group.has-error input,
-.join-us-form .portlet-forms form .form-group.has-error textarea {
+.join-us-form .portlet-forms form .form-group.has-error input {
   resize:none;
 }
 .contact-form textarea.ddm-field-text.form-control,
 .join-us-form textarea.ddm-field-text.form-control{
    resize:none;
+
 }
 
 .contact-form .form-group{

@@ -305,7 +305,10 @@
                 $(".join-us-form-modal-container").removeClass("show");
                 $(".overlay-teams").fadeOut(400);
                 $(".left-contact-button,.back-to-top-button:nth-of-type(1), .back-to-top-button:nth-of-type(2)").css({'z-index':'5'});
-                $(".contact-form-modal-container form, .join-us-form-modal-container").find('input,textarea,option').val("");
+
+                $(".contact-form-modal-container form, .join-us-form-modal-container").find('input,textarea').val("");
+                $(".join-us-form-modal-container select").prop("selectedIndex", 0);
+                
                 $("button.btn-monospaced.ml-auto.navbar-toggler").css({
                     'z-index': '7'
                 });
@@ -1828,22 +1831,14 @@ FOR THIS INDUSTRY. BRUZE KNOCKED IT OUT OF THE PARK."
                                   <div class="col-ddm col-md-12" data-ddm-field-column="0" data-ddm-field-page="0" data-ddm-field-row="4">
                                     <div class="ddm-field" data-field-name="Field89238605">
                                       <div class="form-group" data-field-name="Field89238605">
-                                        <!-- TODO: option list was not present in the rendered markup -->
-                                        <select multiple hidden aria-label="Position" id="_com_liferay_dynamic_data_mapping_form_web_portlet_DDMFormPortlet_INSTANCE_AbszoRRo9mLs_ddm$$Field89238605$u8DNghnI$0$$en_US" name="Position" class="form-control form-control">
-                                          <option disabled value=""></option>
+                                        <select name="Position" aria-label="Position" class="form-control select-field-trigger" id="_com_liferay_dynamic_data_mapping_form_web_portlet_DDMFormPortlet_INSTANCE_AbszoRRo9mLs_ddm$$Field89238605$u8DNghnI$0$$en_US">
+                                            <option value="" selected disabled>Position</option>
+                                            <option value="java-engineer">Java Engineer</option>
+                                            <option value="developer">Developer</option>
+                                            <option value="designer">Designer</option>
+                                            <option value="other">Other</option>
                                         </select>
-                                        <div>
-                                          <div class="form-control select-field-trigger" tabindex="0">
-                                            <div class="option-selected option-selected-placeholder">Position</div>
-                                            <a class="select-arrow-down-container">
-                                              <svg class="lexicon-icon" role="presentation" viewBox="0 0 512 512">
-                                                <path d="M407.139 151.999l-136.136-136.136c-9.036-9.037-23.688-9.037-32.725 0l-136.136 136.136c-14.577 14.577-4.253 39.501 16.362 39.501h272.272c20.615 0 30.94-24.924 16.362-39.501z"></path>
-                                                <path d="M103.18 359.002l136.136 136.136c9.036 9.036 23.688 9.036 32.724 0l136.136-136.136c14.577-14.577 4.253-39.502-16.362-39.502h-272.272c-20.615 0-30.939 24.925-16.362 39.502z"></path>
-                                              </svg>
-                                            </a>
-                                          </div>
                                         </div>
-                                      </div>
                                     </div>
                                   </div>
                                 </div>

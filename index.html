@@ -307,7 +307,7 @@
                 $(".overlay-teams").fadeOut(400);
                 $(".left-contact-button,.back-to-top-button:nth-of-type(1), .back-to-top-button:nth-of-type(2)").css({'z-index':'5'});
 
-                $(".contact-form-modal-container form, .join-us-form-modal-container").find('input,textarea').val("");
+                $(".contact-form-modal-container form, .join-us-form-modal-container").find('input:not([type=hidden]),textarea').val("");
                 $(".join-us-form-modal-container select").prop("selectedIndex", 0);
 
                 $("button.btn-monospaced.ml-auto.navbar-toggler").css({
@@ -1525,283 +1525,283 @@ FOR THIS INDUSTRY. BRUZE KNOCKED IT OUT OF THE PARK."
 	<div class="portlet-layout row">
 		<div class="col-md-12 portlet-column portlet-column-only contact-form green" id="column-2">
 			<div class="contact-form-modal-container" tabindex="0">
-  <div class="contact-x">
-    <a href="#"><span>×</span></a>
-  </div>
-
-  <div class="portlet-dropzone" id="layout-column_column-2">
-
-    <!-- Contact heading -->
-    <div class="portlet-boundary portlet-borderless portlet-journal-content" id="p_p_id_com_liferay_journal_content_web_portlet_JournalContentPortlet_INSTANCE_yirG299sDjo4_">
-      <section class="portlet" id="portlet_com_liferay_journal_content_web_portlet_JournalContentPortlet_INSTANCE_yirG299sDjo4">
-        <div class="portlet-content">
-          <div class="autofit-float autofit-row portlet-header">
-            <div class="autofit-col">
-              <h2 class="portlet-title-text">Contact Form - Top</h2>
-            </div>
-          </div>
-          <div class="portlet-body">
-            <h2 class="lfr-ddm-form-page-title">Contact</h2>
-          </div>
-        </div>
-      </section>
-    </div>
-
-    <!-- Contact form -->
-    <div class="portlet-boundary portlet-borderless portlet-forms-display" id="p_p_id_com_liferay_dynamic_data_mapping_form_web_portlet_DDMFormPortlet_INSTANCE_WRjGfQOMzE5r_">
-      <section class="portlet" id="portlet_com_liferay_dynamic_data_mapping_form_web_portlet_DDMFormPortlet_INSTANCE_WRjGfQOMzE5r">
-        <div class="portlet-content">
-          <div class="autofit-float autofit-row portlet-header">
-            <div class="autofit-col">
-              <h2 class="portlet-title-text">Form</h2>
-            </div>
-          </div>
-          <div class="portlet-body">
-            <div class="portlet-forms">
-
-              <!-- TODO: set action to the new form endpoint -->
-              <form action="#" method="post" class="form" id="_com_liferay_dynamic_data_mapping_form_web_portlet_DDMFormPortlet_INSTANCE_WRjGfQOMzE5r_fm" name="_com_liferay_dynamic_data_mapping_form_web_portlet_DDMFormPortlet_INSTANCE_WRjGfQOMzE5r_fm">
-
-                <div class="ddm-form-basic-info">
-                  <div class="container-fluid">
-                    <h1 class="ddm-form-name">Contact</h1>
-                  </div>
+                <div class="contact-x">
+                    <a href="#"><span>×</span></a>
                 </div>
 
-                <div class="container-fluid ddm-form-builder-app" id="ddmFormgwBpe36Wcontainer">
-                  <div id="ddmFormgwBpe36W">
-                    <div class="react-component-adapter">
-                      <div class="lfr-ddm-form-container position-relative ddm-user-view-content">
-                        <div class="ddm-layout-builder ddm-page-container-layout">
-                          <div class="form-builder-layout">
-                            <div class="active ddm-form-page lfr-ddm-form-page" data-ddm-page="0">
+                <div class="portlet-dropzone" id="layout-column_column-2">
 
-                              <!-- First Name (required) -->
-                              <div>
-                                <div class="position-relative row">
-                                  <div class="col-ddm col-md-12" data-ddm-field-column="0" data-ddm-field-page="0" data-ddm-field-row="0">
-                                    <div class="ddm-field" data-field-name="FirstName">
-                                      <div class="form-group" data-field-name="FirstName">
-                                        <p class="ddm-label">
-                                          <span class="reference-mark">
-                                            <svg class="lexicon-icon" role="presentation" viewBox="0 0 512 512"><path d="M323.6,190l146.7-48.8L512,263.9l-149.2,47.6l93.6,125.2l-104.9,76.3l-96.1-126.4l-93.6,126.4L56.9,435.3l92.3-123.9L0,263.8l40.4-122.6L188.4,190v-159h135.3L323.6,190L323.6,190z"></path></svg>
-                                          </span>
-                                        </p>
-                                        <div class="input-group">
-                                          <div class="input-group-item">
-                                            <input name="FirstName" type="text" class="form-control" placeholder="First Name *" aria-label="First name" value="" required>
-                                          </div>
+                    <!-- Contact heading -->
+                    <div class="portlet-boundary portlet-borderless portlet-journal-content" id="p_p_id_com_liferay_journal_content_web_portlet_JournalContentPortlet_INSTANCE_yirG299sDjo4_">
+                    <section class="portlet" id="portlet_com_liferay_journal_content_web_portlet_JournalContentPortlet_INSTANCE_yirG299sDjo4">
+                        <div class="portlet-content">
+                        <div class="autofit-float autofit-row portlet-header">
+                            <div class="autofit-col">
+                            <h2 class="portlet-title-text">Contact Form - Top</h2>
+                            </div>
+                        </div>
+                        <div class="portlet-body">
+                            <h2 class="lfr-ddm-form-page-title">Contact</h2>
+                        </div>
+                        </div>
+                    </section>
+                    </div>
+
+                    <!-- Contact form -->
+                    <div class="portlet-boundary portlet-borderless portlet-forms-display" id="p_p_id_com_liferay_dynamic_data_mapping_form_web_portlet_DDMFormPortlet_INSTANCE_WRjGfQOMzE5r_">
+                    <section class="portlet" id="portlet_com_liferay_dynamic_data_mapping_form_web_portlet_DDMFormPortlet_INSTANCE_WRjGfQOMzE5r">
+                        <div class="portlet-content">
+                        <div class="autofit-float autofit-row portlet-header">
+                            <div class="autofit-col">
+                            <h2 class="portlet-title-text">Form</h2>
+                            </div>
+                        </div>
+                        <div class="portlet-body">
+                            <div class="portlet-forms">
+
+                            <!-- TODO: set action to the new form endpoint -->
+                            <form action="#" method="post" class="form" id="_com_liferay_dynamic_data_mapping_form_web_portlet_DDMFormPortlet_INSTANCE_WRjGfQOMzE5r_fm" name="_com_liferay_dynamic_data_mapping_form_web_portlet_DDMFormPortlet_INSTANCE_WRjGfQOMzE5r_fm">
+
+                                <div class="ddm-form-basic-info">
+                                <div class="container-fluid">
+                                    <h1 class="ddm-form-name">Contact</h1>
+                                </div>
+                                </div>
+
+                                <div class="container-fluid ddm-form-builder-app" id="ddmFormgwBpe36Wcontainer">
+                                <div id="ddmFormgwBpe36W">
+                                    <div class="react-component-adapter">
+                                    <div class="lfr-ddm-form-container position-relative ddm-user-view-content">
+                                        <div class="ddm-layout-builder ddm-page-container-layout">
+                                        <div class="form-builder-layout">
+                                            <div class="active ddm-form-page lfr-ddm-form-page" data-ddm-page="0">
+
+                                            <!-- First Name (required) -->
+                                            <div>
+                                                <div class="position-relative row">
+                                                <div class="col-ddm col-md-12" data-ddm-field-column="0" data-ddm-field-page="0" data-ddm-field-row="0">
+                                                    <div class="ddm-field" data-field-name="FirstName">
+                                                    <div class="form-group" data-field-name="FirstName">
+                                                        <p class="ddm-label">
+                                                        <span class="reference-mark">
+                                                            <svg class="lexicon-icon" role="presentation" viewBox="0 0 512 512"><path d="M323.6,190l146.7-48.8L512,263.9l-149.2,47.6l93.6,125.2l-104.9,76.3l-96.1-126.4l-93.6,126.4L56.9,435.3l92.3-123.9L0,263.8l40.4-122.6L188.4,190v-159h135.3L323.6,190L323.6,190z"></path></svg>
+                                                        </span>
+                                                        </p>
+                                                        <div class="input-group">
+                                                        <div class="input-group-item">
+                                                            <input name="FirstName" type="text" class="form-control" placeholder="First Name *" aria-label="First name" value="" required>
+                                                        </div>
+                                                        </div>
+                                                    </div>
+                                                    </div>
+                                                </div>
+                                                </div>
+                                            </div>
+
+                                            <!-- Last Name (required) -->
+                                            <div>
+                                                <div class="position-relative row">
+                                                <div class="col-ddm col-md-12" data-ddm-field-column="0" data-ddm-field-page="0" data-ddm-field-row="1">
+                                                    <div class="ddm-field" data-field-name="LastName">
+                                                    <div class="form-group" data-field-name="LastName">
+                                                        <p class="ddm-label">
+                                                        <span class="reference-mark">
+                                                            <svg class="lexicon-icon" role="presentation" viewBox="0 0 512 512"><path d="M323.6,190l146.7-48.8L512,263.9l-149.2,47.6l93.6,125.2l-104.9,76.3l-96.1-126.4l-93.6,126.4L56.9,435.3l92.3-123.9L0,263.8l40.4-122.6L188.4,190v-159h135.3L323.6,190L323.6,190z"></path></svg>
+                                                        </span>
+                                                        </p>
+                                                        <input name="LastName" type="text" class="form-control ddm-field-text" placeholder="Last Name *" aria-label="Last name" value="" required>
+                                                    </div>
+                                                    </div>
+                                                </div>
+                                                </div>
+                                            </div>
+
+                                            <!-- Phone Number (optional) -->
+                                            <div>
+                                                <div class="position-relative row">
+                                                <div class="col-ddm col-md-12" data-ddm-field-column="0" data-ddm-field-page="0" data-ddm-field-row="2">
+                                                    <div class="ddm-field" data-field-name="PhoneNumber">
+                                                    <div class="form-group" data-field-name="PhoneNumber">
+                                                        <input name="PhoneNumber" type="text" class="form-control" placeholder="Phone Number" aria-label="Phone number" value="">
+                                                    </div>
+                                                    </div>
+                                                </div>
+                                                </div>
+                                            </div>
+
+                                            <!-- Email (required) -->
+                                            <div>
+                                                <div class="position-relative row">
+                                                <div class="col-ddm col-md-12" data-ddm-field-column="0" data-ddm-field-page="0" data-ddm-field-row="3">
+                                                    <div class="ddm-field" data-field-name="Email">
+                                                    <div class="form-group" data-field-name="Email">
+                                                        <p class="ddm-label">
+                                                        <span class="reference-mark">
+                                                            <svg class="lexicon-icon" role="presentation" viewBox="0 0 512 512"><path d="M323.6,190l146.7-48.8L512,263.9l-149.2,47.6l93.6,125.2l-104.9,76.3l-96.1-126.4l-93.6,126.4L56.9,435.3l92.3-123.9L0,263.8l40.4-122.6L188.4,190v-159h135.3L323.6,190L323.6,190z"></path></svg>
+                                                        </span>
+                                                        </p>
+                                                        <input name="Email" type="text" class="form-control ddm-field-text" placeholder="Email Address *" aria-label="Email address" value="" required >
+                                                    </div>
+                                                    </div>
+                                                </div>
+                                                </div>
+                                            </div>
+
+                                            <!-- Message (required) -->
+                                            <div>
+                                                <div class="position-relative row">
+                                                <div class="col-ddm col-md-12" data-ddm-field-column="0" data-ddm-field-page="0" data-ddm-field-row="4">
+                                                    <div class="ddm-field" data-field-name="Message">
+                                                    <div class="form-group" data-field-name="Message">
+                                                        <p class="ddm-label">
+                                                        <span class="reference-mark">
+                                                            <svg class="lexicon-icon" role="presentation" viewBox="0 0 512 512"><path d="M323.6,190l146.7-48.8L512,263.9l-149.2,47.6l93.6,125.2l-104.9,76.3l-96.1-126.4l-93.6,126.4L56.9,435.3l92.3-123.9L0,263.8l40.4-122.6L188.4,190v-159h135.3L323.6,190L323.6,190z"></path></svg>
+                                                        </span>
+                                                        </p>
+                                                        <textarea name="Message" class="ddm-field-text form-control" placeholder="Type your message here... *" aria-label="Message" required></textarea>
+                                                    </div>
+                                                    </div>
+                                                </div>
+                                                </div>
+                                            </div>
+
+                                            </div>
                                         </div>
-                                      </div>
+                                        </div>
+                                        <div class="lfr-ddm-form-pagination-controls">
+                                        <button class="float-right lfr-ddm-form-submit btn btn-primary" type="submit">Submit</button>
+                                        </div>
                                     </div>
-                                  </div>
-                                </div>
-                              </div>
-
-                              <!-- Last Name (required) -->
-                              <div>
-                                <div class="position-relative row">
-                                  <div class="col-ddm col-md-12" data-ddm-field-column="0" data-ddm-field-page="0" data-ddm-field-row="1">
-                                    <div class="ddm-field" data-field-name="LastName">
-                                      <div class="form-group" data-field-name="LastName">
-                                        <p class="ddm-label">
-                                          <span class="reference-mark">
-                                            <svg class="lexicon-icon" role="presentation" viewBox="0 0 512 512"><path d="M323.6,190l146.7-48.8L512,263.9l-149.2,47.6l93.6,125.2l-104.9,76.3l-96.1-126.4l-93.6,126.4L56.9,435.3l92.3-123.9L0,263.8l40.4-122.6L188.4,190v-159h135.3L323.6,190L323.6,190z"></path></svg>
-                                          </span>
-                                        </p>
-                                        <input name="LastName" type="text" class="form-control ddm-field-text" placeholder="Last Name *" aria-label="Last name" value="" required>
-                                      </div>
                                     </div>
-                                  </div>
                                 </div>
-                              </div>
-
-                              <!-- Phone Number (optional) -->
-                              <div>
-                                <div class="position-relative row">
-                                  <div class="col-ddm col-md-12" data-ddm-field-column="0" data-ddm-field-page="0" data-ddm-field-row="2">
-                                    <div class="ddm-field" data-field-name="PhoneNumber">
-                                      <div class="form-group" data-field-name="PhoneNumber">
-                                        <input name="PhoneNumber" type="text" class="form-control" placeholder="Phone Number" aria-label="Phone number" value="">
-                                      </div>
-                                    </div>
-                                  </div>
                                 </div>
-                              </div>
-
-                              <!-- Email (required) -->
-                              <div>
-                                <div class="position-relative row">
-                                  <div class="col-ddm col-md-12" data-ddm-field-column="0" data-ddm-field-page="0" data-ddm-field-row="3">
-                                    <div class="ddm-field" data-field-name="Email">
-                                      <div class="form-group" data-field-name="Email">
-                                        <p class="ddm-label">
-                                          <span class="reference-mark">
-                                            <svg class="lexicon-icon" role="presentation" viewBox="0 0 512 512"><path d="M323.6,190l146.7-48.8L512,263.9l-149.2,47.6l93.6,125.2l-104.9,76.3l-96.1-126.4l-93.6,126.4L56.9,435.3l92.3-123.9L0,263.8l40.4-122.6L188.4,190v-159h135.3L323.6,190L323.6,190z"></path></svg>
-                                          </span>
-                                        </p>
-                                        <input name="Email" type="text" class="form-control ddm-field-text" placeholder="Email Address *" aria-label="Email address" value="" required >
-                                      </div>
-                                    </div>
-                                  </div>
-                                </div>
-                              </div>
-
-                              <!-- Message (required) -->
-                              <div>
-                                <div class="position-relative row">
-                                  <div class="col-ddm col-md-12" data-ddm-field-column="0" data-ddm-field-page="0" data-ddm-field-row="4">
-                                    <div class="ddm-field" data-field-name="Message">
-                                      <div class="form-group" data-field-name="Message">
-                                        <p class="ddm-label">
-                                          <span class="reference-mark">
-                                            <svg class="lexicon-icon" role="presentation" viewBox="0 0 512 512"><path d="M323.6,190l146.7-48.8L512,263.9l-149.2,47.6l93.6,125.2l-104.9,76.3l-96.1-126.4l-93.6,126.4L56.9,435.3l92.3-123.9L0,263.8l40.4-122.6L188.4,190v-159h135.3L323.6,190L323.6,190z"></path></svg>
-                                          </span>
-                                        </p>
-                                        <textarea name="Message" class="ddm-field-text form-control" placeholder="Type your message here... *" aria-label="Message" required></textarea>
-                                      </div>
-                                    </div>
-                                  </div>
-                                </div>
-                              </div>
+                                <input type="hidden" name="form" value="contact">
+                                <div class="hp-field" aria-hidden="true">
+                                <label>Leave this field empty
+                                    <input type="text" name="hp_website" tabindex="-1" autocomplete="off">
+                                </label>
+                                </div>  
+                            </form>
 
                             </div>
-                          </div>
                         </div>
-                        <div class="lfr-ddm-form-pagination-controls">
-                          <button class="float-right lfr-ddm-form-submit btn btn-primary" type="submit">Submit</button>
                         </div>
-                      </div>
+                    </section>
                     </div>
-                  </div>
+
+                    <!-- Office email addresses -->
+                    <div class="portlet-boundary portlet-borderless portlet-journal-content" id="p_p_id_com_liferay_journal_content_web_portlet_JournalContentPortlet_INSTANCE_tbv9oEObry2w_">
+                    <section class="portlet" id="portlet_com_liferay_journal_content_web_portlet_JournalContentPortlet_INSTANCE_tbv9oEObry2w">
+                        <div class="portlet-content">
+                        <div class="autofit-float autofit-row portlet-header">
+                            <div class="autofit-col">
+                            <h2 class="portlet-title-text">Contact: Office Email Addresses</h2>
+                            </div>
+                        </div>
+                        <div class="portlet-body">
+                            <div class="office-email-addresses">
+                            <strong>BRUZE TORONTO</strong>
+                            <p><a href="mailto:toronto@bruze.com">TORONTO@BRUZE.COM</a></p>
+                            <strong>BRUZE NEW YORK</strong>
+                            <p><a href="mailto:newyork@bruze.com">NEWYORK@BRUZE.COM</a></p>
+                            </div>
+                        </div>
+                        </div>
+                    </section>
+                    </div>
+
                 </div>
-                <input type="hidden" name="form" value="contact">
-                <div class="hp-field" aria-hidden="true">
-                <label>Leave this field empty
-                    <input type="text" name="hp_website" tabindex="-1" autocomplete="off">
-                </label>
-                </div>  
-              </form>
-
             </div>
-          </div>
-        </div>
-      </section>
-    </div>
-
-    <!-- Office email addresses -->
-    <div class="portlet-boundary portlet-borderless portlet-journal-content" id="p_p_id_com_liferay_journal_content_web_portlet_JournalContentPortlet_INSTANCE_tbv9oEObry2w_">
-      <section class="portlet" id="portlet_com_liferay_journal_content_web_portlet_JournalContentPortlet_INSTANCE_tbv9oEObry2w">
-        <div class="portlet-content">
-          <div class="autofit-float autofit-row portlet-header">
-            <div class="autofit-col">
-              <h2 class="portlet-title-text">Contact: Office Email Addresses</h2>
-            </div>
-          </div>
-          <div class="portlet-body">
-            <div class="office-email-addresses">
-              <strong>BRUZE TORONTO</strong>
-              <p><a href="mailto:toronto@bruze.com">TORONTO@BRUZE.COM</a></p>
-              <strong>BRUZE NEW YORK</strong>
-              <p><a href="mailto:newyork@bruze.com">NEWYORK@BRUZE.COM</a></p>
-            </div>
-          </div>
-        </div>
-      </section>
-    </div>
-
-  </div>
-</div>
 		</div>
 	</div>
 	<div class="portlet-layout row">
 		<div class="portlet-column portlet-column-only join-us-form red" id="column-3">
 			<div class="join-us-form-modal-container">
-  <div class="join-x">
-    <a href="#"><span>×</span></a>
-  </div>
-
-  <div class="portlet-dropzone" id="layout-column_column-3">
-
-    <!-- Join Us blurb -->
-    <div class="portlet-boundary portlet-borderless portlet-journal-content" id="p_p_id_com_liferay_journal_content_web_portlet_JournalContentPortlet_INSTANCE_XlU03cLUGPd0_">
-      <section class="portlet" id="portlet_com_liferay_journal_content_web_portlet_JournalContentPortlet_INSTANCE_XlU03cLUGPd0">
-        <div class="portlet-content">
-          <div class="autofit-float autofit-row portlet-header">
-            <div class="autofit-col">
-              <h2 class="portlet-title-text">Join Us Form Blurb</h2>
-            </div>
-          </div>
-          <div class="portlet-body">
-            <div class="form-intro">
-              <h2>Join The Team</h2>
-              <p>For over 15 years, we’ve worked with the best brands in financial services.</p>
-              <p>We believe in partnership, both externally and internally. If working with some of the most talented people in the business, at a place that will always have your back sounds good to you, then we hope you’ll join us.</p>
-            </div>
-          </div>
-        </div>
-      </section>
-    </div>
-
-    <!-- Join Us form -->
-    <div class="portlet-boundary portlet-borderless portlet-forms-display" id="p_p_id_com_liferay_dynamic_data_mapping_form_web_portlet_DDMFormPortlet_INSTANCE_AbszoRRo9mLs_">
-      <section class="portlet" id="portlet_com_liferay_dynamic_data_mapping_form_web_portlet_DDMFormPortlet_INSTANCE_AbszoRRo9mLs">
-        <div class="portlet-content">
-          <div class="autofit-float autofit-row portlet-header">
-            <div class="autofit-col">
-              <h2 class="portlet-title-text">Form</h2>
-            </div>
-          </div>
-          <div class="portlet-body">
-            <div class="portlet-forms">
-
-              <!-- TODO: set action to the new form endpoint -->
-              <form action="#" method="post" class="form" id="_com_liferay_dynamic_data_mapping_form_web_portlet_DDMFormPortlet_INSTANCE_AbszoRRo9mLs_fm" name="_com_liferay_dynamic_data_mapping_form_web_portlet_DDMFormPortlet_INSTANCE_AbszoRRo9mLs_fm">
-
-                <div class="ddm-form-basic-info">
-                  <div class="container-fluid">
-                    <h1 class="ddm-form-name">Join the Team</h1>
-                    <p>Official Version</p>
-                  </div>
+                <div class="join-x">
+                    <a href="#"><span>×</span></a>
                 </div>
 
-                <div class="container-fluid ddm-form-builder-app" id="ddmForm9H3Zvsvecontainer">
-                  <div id="ddmForm9H3Zvsve">
-                    <div class="react-component-adapter">
-                      <div class="lfr-ddm-form-container position-relative ddm-user-view-content">
-                        <div class="ddm-layout-builder ddm-page-container-layout">
-                          <div class="form-builder-layout">
-                            <div class="active ddm-form-page lfr-ddm-form-page" data-ddm-page="0">
+                <div class="portlet-dropzone" id="layout-column_column-3">
 
-                              <h2 class="lfr-ddm-form-page-title">JOIN THE TEAM</h2>
-
-                              <!-- First Name (required) -->
-                              <div>
-                                <div class="position-relative row">
-                                  <div class="col-ddm col-md-12" data-ddm-field-column="0" data-ddm-field-page="0" data-ddm-field-row="0">
-                                    <div class="ddm-field" data-field-name="Field99649245">
-                                      <div class="form-group" data-field-name="Field99649245">
-                                        <p class="ddm-label">First Name<span class="reference-mark"><svg class="lexicon-icon" role="presentation" viewBox="0 0 512 512"><path d="M323.6,190l146.7-48.8L512,263.9l-149.2,47.6l93.6,125.2l-104.9,76.3l-96.1-126.4l-93.6,126.4L56.9,435.3l92.3-123.9L0,263.8l40.4-122.6L188.4,190v-159h135.3L323.6,190L323.6,190z"></path></svg></span></p>
-                                        <input name="FirstName" type="text" class="form-control ddm-field-text" placeholder="First Name" aria-label="First name" value="" required>
-                                      </div>
+                <!-- Join Us blurb -->
+                    <div class="portlet-boundary portlet-borderless portlet-journal-content" id="p_p_id_com_liferay_journal_content_web_portlet_JournalContentPortlet_INSTANCE_XlU03cLUGPd0_">
+                        <section class="portlet" id="portlet_com_liferay_journal_content_web_portlet_JournalContentPortlet_INSTANCE_XlU03cLUGPd0">
+                            <div class="portlet-content">
+                                <div class="autofit-float autofit-row portlet-header">
+                                    <div class="autofit-col">
+                                    <h2 class="portlet-title-text">Join Us Form Blurb</h2>
                                     </div>
-                                  </div>
                                 </div>
-                              </div>
-
-                              <!-- Last Name (required) -->
-                              <div>
-                                <div class="position-relative row">
-                                  <div class="col-ddm col-md-12" data-ddm-field-column="0" data-ddm-field-page="0" data-ddm-field-row="1">
-                                    <div class="ddm-field" data-field-name="Field85097689">
-                                      <div class="form-group" data-field-name="Field85097689">
-                                        <p class="ddm-label">Last Name<span class="reference-mark"><svg class="lexicon-icon" role="presentation" viewBox="0 0 512 512"><path d="M323.6,190l146.7-48.8L512,263.9l-149.2,47.6l93.6,125.2l-104.9,76.3l-96.1-126.4l-93.6,126.4L56.9,435.3l92.3-123.9L0,263.8l40.4-122.6L188.4,190v-159h135.3L323.6,190L323.6,190z"></path></svg></span></p>
-                                        <input name="LastName" type="text" class="form-control ddm-field-text" placeholder="Last Name" aria-label="Last name" value="" required>
-                                      </div>
+                                <div class="portlet-body">
+                                    <div class="form-intro">
+                                    <h2>Join The Team</h2>
+                                    <p>For over 15 years, we’ve worked with the best brands in financial services.</p>
+                                    <p>We believe in partnership, both externally and internally. If working with some of the most talented people in the business, at a place that will always have your back sounds good to you, then we hope you’ll join us.</p>
                                     </div>
-                                  </div>
                                 </div>
-                              </div>
+                            </div>
+                        </section>
+                    </div>
+
+                    <!-- Join Us form -->
+                    <div class="portlet-boundary portlet-borderless portlet-forms-display" id="p_p_id_com_liferay_dynamic_data_mapping_form_web_portlet_DDMFormPortlet_INSTANCE_AbszoRRo9mLs_">
+                    <section class="portlet" id="portlet_com_liferay_dynamic_data_mapping_form_web_portlet_DDMFormPortlet_INSTANCE_AbszoRRo9mLs">
+                        <div class="portlet-content">
+                        <div class="autofit-float autofit-row portlet-header">
+                            <div class="autofit-col">
+                            <h2 class="portlet-title-text">Form</h2>
+                            </div>
+                        </div>
+                        <div class="portlet-body">
+                            <div class="portlet-forms">
+
+                            <!-- TODO: set action to the new form endpoint -->
+                            <form action="#" method="post" class="form" id="_com_liferay_dynamic_data_mapping_form_web_portlet_DDMFormPortlet_INSTANCE_AbszoRRo9mLs_fm" name="_com_liferay_dynamic_data_mapping_form_web_portlet_DDMFormPortlet_INSTANCE_AbszoRRo9mLs_fm">
+
+                                <div class="ddm-form-basic-info">
+                                <div class="container-fluid">
+                                    <h1 class="ddm-form-name">Join the Team</h1>
+                                    <p>Official Version</p>
+                                </div>
+                                </div>
+
+                                <div class="container-fluid ddm-form-builder-app" id="ddmForm9H3Zvsvecontainer">
+                                <div id="ddmForm9H3Zvsve">
+                                    <div class="react-component-adapter">
+                                    <div class="lfr-ddm-form-container position-relative ddm-user-view-content">
+                                        <div class="ddm-layout-builder ddm-page-container-layout">
+                                        <div class="form-builder-layout">
+                                            <div class="active ddm-form-page lfr-ddm-form-page" data-ddm-page="0">
+
+                                            <h2 class="lfr-ddm-form-page-title">JOIN THE TEAM</h2>
+
+                                            <!-- First Name (required) -->
+                                            <div>
+                                                <div class="position-relative row">
+                                                <div class="col-ddm col-md-12" data-ddm-field-column="0" data-ddm-field-page="0" data-ddm-field-row="0">
+                                                    <div class="ddm-field" data-field-name="Field99649245">
+                                                    <div class="form-group" data-field-name="Field99649245">
+                                                        <p class="ddm-label">First Name<span class="reference-mark"><svg class="lexicon-icon" role="presentation" viewBox="0 0 512 512"><path d="M323.6,190l146.7-48.8L512,263.9l-149.2,47.6l93.6,125.2l-104.9,76.3l-96.1-126.4l-93.6,126.4L56.9,435.3l92.3-123.9L0,263.8l40.4-122.6L188.4,190v-159h135.3L323.6,190L323.6,190z"></path></svg></span></p>
+                                                        <input name="FirstName" type="text" class="form-control ddm-field-text" placeholder="First Name" aria-label="First name" value="" required>
+                                                    </div>
+                                                    </div>
+                                                </div>
+                                                </div>
+                                            </div>
+
+                                        <!-- Last Name (required) -->
+                                        <div>
+                                            <div class="position-relative row">
+                                            <div class="col-ddm col-md-12" data-ddm-field-column="0" data-ddm-field-page="0" data-ddm-field-row="1">
+                                                <div class="ddm-field" data-field-name="Field85097689">
+                                                <div class="form-group" data-field-name="Field85097689">
+                                                    <p class="ddm-label">Last Name<span class="reference-mark"><svg class="lexicon-icon" role="presentation" viewBox="0 0 512 512"><path d="M323.6,190l146.7-48.8L512,263.9l-149.2,47.6l93.6,125.2l-104.9,76.3l-96.1-126.4l-93.6,126.4L56.9,435.3l92.3-123.9L0,263.8l40.4-122.6L188.4,190v-159h135.3L323.6,190L323.6,190z"></path></svg></span></p>
+                                                    <input name="LastName" type="text" class="form-control ddm-field-text" placeholder="Last Name" aria-label="Last name" value="" required>
+                                                </div>
+                                                </div>
+                                            </div>
+                                            </div>
+                                        </div>
 
                               <!-- Email (required) -->
                               <div>
@@ -1931,7 +1931,7 @@ function submitBruzeForm(formID) {
                 })
                 .fail(function (xhr) {
                     var res = xhr.responseJSON || {};
-                    var msg = res.error || $.map(res.errors || {}, function (m) { return m; }).join(' ');
+                    var msg = res.error || $.map(res.errors || {}, function (m) { return m; }).join(' ') || 'The message could not be sent. Please try again.';
                     if (res.errors) {
                         $.each(res.errors, function (name) {
                             $form.find('[name="' + name + '"]').attr('aria-invalid', 'true');
@@ -1941,7 +1941,8 @@ function submitBruzeForm(formID) {
                     $controls.before('<p class="form-error" role="alert">' + msg + '</p>');
                     $button.prop('disabled', false);
                 });
-        }).catch(function () {
+        }).catch(function (err) {
+            console.error('Form submit failed:', err);
             $controls.before('<p class="form-error" role="alert">Verification could not be completed. Please try again.</p>');
             $button.prop('disabled', false);
         });

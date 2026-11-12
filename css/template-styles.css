@@ -3610,6 +3610,9 @@ div#bruze-nav ul li a:focus{
 .join-us-form .form-group:has([aria-invalid="true"])::after {
   top: 24px;                      /* 48px fields in the Join Us form */
 }
+.contact-form p, .join-us-form p {
+    font: 400 16px / 1.4 'Lato', sans-serif;
+}
 .contact-form .form-error,
 .join-us-form .form-error {
   margin: 0 0 1rem;

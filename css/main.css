@@ -6288,6 +6288,7 @@ textarea.form-control::placeholder {
     display: block;
     color: #ffc65c;
     border-radius: 56px;
+    border-style: solid;
     border-color: #ffc65c;
     border-width: 2px;
     padding: 13px 70px;

@@ -1252,7 +1252,7 @@ input.form-control.input-group-inset.input-group-inset-after {
     height: 40px;
     line-height: 39px;
     padding: 0px 38px 0px 38px;
-    margin-bottom:45px;
+    margin-bottom:1rem;
 
 }
 .contact-form button.btn.btn-primary.float-right[type="submit"],
@@ -3619,4 +3619,18 @@ div#bruze-nav ul li a:focus{
   text-align: center;
   font: 400 16px/1.4 'Lato', sans-serif;
   color: #ffc65c;
+}
+.recaptcha-note {
+  margin: 1rem 0 2rem 0;
+  text-align: center;
+  font-family: 'Lato', sans-serif;
+  font-size: 12px;
+  line-height: 1.4;
+  color: #d90280;
+}
+.recaptcha-note a {
+    font-family: 'Lato', sans-serif;
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 2px;
 }

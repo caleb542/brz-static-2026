@@ -26,6 +26,7 @@
 		gtag('js', new Date());
 		gtag('config', 'G-1YJQTD0RCG');
 	</script>
+  
 </head>
 <body class="chrome controls-visible  yui3-skin-sam guest-site signed-out public-page site">
 	<nav class="quick-access-nav" id="utcu_quickAccessNav">
@@ -131,7 +132,7 @@
         function freeze() { 
             var scrollbarWidth = window.innerWidth - document.documentElement.clientWidth;
             $("body").addClass("freeze").css({
-                paddingRight: scrollbarWidth + 'px'
+                // paddingRight: scrollbarWidth + 'px'
             })
             $('.vertical-centering-line').css({
                 'left': 'calc(50% - calc((' + scrollbarWidth + 'px)/2))'
@@ -140,7 +141,7 @@
         function thaw() {
             var scrollbarWidth = window.innerWidth - document.documentElement.clientWidth;
             $("body").removeClass("freeze").css({
-                paddingRight: 0
+                // paddingRight: 0
             })
             $('.vertical-centering-line').css({
                 'left': 'calc(50% - calc((' + scrollbarWidth + 'px)/2))'
@@ -305,7 +306,10 @@
                 $(".join-us-form-modal-container").removeClass("show");
                 $(".overlay-teams").fadeOut(400);
                 $(".left-contact-button,.back-to-top-button:nth-of-type(1), .back-to-top-button:nth-of-type(2)").css({'z-index':'5'});
-                $(".contact-form-modal-container form, .join-us-form-modal-container").find('input,textarea,option').val("");
+
+                $(".contact-form-modal-container form, .join-us-form-modal-container").find('input:not([type=hidden]),textarea').val("");
+                $(".join-us-form-modal-container select").prop("selectedIndex", 0);
+
                 $("button.btn-monospaced.ml-auto.navbar-toggler").css({
                     'z-index': '7'
                 });
@@ -529,12 +533,12 @@
         </div>
     </div>
 </div>
- <a tabindex="-1" class="left-contact-button" href="#" >
-        <span>contact</span>
-        <span>contact</span>    
+ <a tabindex="-1" aria-hidden="true" class="left-contact-button" href="#" >
+        <span aria-hidden="true" >contact</span>
+        <span aria-hidden="true" >contact</span>    
     </a>
     <div class="back-to-top">
-        <a  tabindex="-1" href="#" class="back-to-top-button">
+        <a  tabindex="-1" aria-hidden="true"  href="#" class="back-to-top-button">
             <span aria-hidden="true"  data-icon-2="">>
             </span>
             <span aria-hidden="true" data-icon-2="">>
@@ -1520,227 +1524,431 @@ FOR THIS INDUSTRY. BRUZE KNOCKED IT OUT OF THE PARK."
 	</div>
 	<div class="portlet-layout row">
 		<div class="col-md-12 portlet-column portlet-column-only contact-form green" id="column-2">
-			<div class="contact-form-modal-container">
-				<div class="contact-x">
-					<a href="#"><span>×</span>
-					</a>
-				</div>
-				<div class="portlet-dropzone portlet-column-content portlet-column-content-only" id="layout-column_column-2">
-	<div class="portlet-boundary portlet-boundary_com_liferay_journal_content_web_portlet_JournalContentPortlet_  portlet-static portlet-static-end portlet-borderless portlet-journal-content " id="p_p_id_com_liferay_journal_content_web_portlet_JournalContentPortlet_INSTANCE_yirG299sDjo4_">
-		<span id="p_com_liferay_journal_content_web_portlet_JournalContentPortlet_INSTANCE_yirG299sDjo4"></span>
-<section class="portlet" id="portlet_com_liferay_journal_content_web_portlet_JournalContentPortlet_INSTANCE_yirG299sDjo4">
-	<div class="portlet-content">
-		<div class="autofit-float autofit-row portlet-header">
-			<div class="autofit-col autofit-col-expand">
-				<h2 class="portlet-title-text">Contact Form - Top</h2>
-			</div>
-			<div class="autofit-col autofit-col-end">
-				<div class="autofit-section">
-<div class="visible-interaction">
-</div>				</div>
-			</div>
-		</div>
-			<div class=" portlet-content-container">
-	<div class="portlet-body">
-						<div class="" data-fragments-editor-item-id="20131-48039" data-fragments-editor-item-type="fragments-editor-mapped-item" >
-<div class="journal-content-article " data-analytics-asset-id="48037" data-analytics-asset-title="Contact Form - Top" data-analytics-asset-type="web-content">
-	<h2 class="lfr-ddm-form-page-title">Contact</h2>
-</div>
-						</div>
-	</div>
-			</div>
-	</div>
-</section>
-	</div>
-	<div class="portlet-boundary portlet-boundary_com_liferay_dynamic_data_mapping_form_web_portlet_DDMFormPortlet_  portlet-static portlet-static-end portlet-borderless portlet-forms-display " id="p_p_id_com_liferay_dynamic_data_mapping_form_web_portlet_DDMFormPortlet_INSTANCE_WRjGfQOMzE5r_">
-		<span id="p_com_liferay_dynamic_data_mapping_form_web_portlet_DDMFormPortlet_INSTANCE_WRjGfQOMzE5r"></span>
-<section class="portlet" id="portlet_com_liferay_dynamic_data_mapping_form_web_portlet_DDMFormPortlet_INSTANCE_WRjGfQOMzE5r">
-	<div class="portlet-content">
-		<div class="autofit-float autofit-row portlet-header">
-			<div class="autofit-col autofit-col-expand">
-				<h2 class="portlet-title-text">Form</h2>
-			</div>
-			<div class="autofit-col autofit-col-end">
-				<div class="autofit-section">
-				</div>
-			</div>
-		</div>
-			<div class=" portlet-content-container">
-	<div class="portlet-body">
-				<div class="portlet-forms">
-<form action="https://www.bruze.com/web/guest/home?p_p_id=com_liferay_dynamic_data_mapping_form_web_portlet_DDMFormPortlet_INSTANCE_WRjGfQOMzE5r&amp;p_p_lifecycle=1&amp;p_p_state=normal&amp;p_p_mode=view&amp;_com_liferay_dynamic_data_mapping_form_web_portlet_DDMFormPortlet_INSTANCE_WRjGfQOMzE5r_javax.portlet.action=addFormInstanceRecord&amp;p_auth=JlhvNw6N" class="form  " data-fm-namespace="_com_liferay_dynamic_data_mapping_form_web_portlet_DDMFormPortlet_INSTANCE_WRjGfQOMzE5r_" id="_com_liferay_dynamic_data_mapping_form_web_portlet_DDMFormPortlet_INSTANCE_WRjGfQOMzE5r_fm" method="post" name="_com_liferay_dynamic_data_mapping_form_web_portlet_DDMFormPortlet_INSTANCE_WRjGfQOMzE5r_fm" data-DDMFormInstanceId="36285" data-senna-off="true" >
-				<input  class="field form-control"  id="_com_liferay_dynamic_data_mapping_form_web_portlet_DDMFormPortlet_INSTANCE_WRjGfQOMzE5r_formDate"    name="_com_liferay_dynamic_data_mapping_form_web_portlet_DDMFormPortlet_INSTANCE_WRjGfQOMzE5r_formDate"     type="hidden" value="1791234513932"   />
-				<input  class="field form-control"  id="_com_liferay_dynamic_data_mapping_form_web_portlet_DDMFormPortlet_INSTANCE_WRjGfQOMzE5r_currentURL"    name="_com_liferay_dynamic_data_mapping_form_web_portlet_DDMFormPortlet_INSTANCE_WRjGfQOMzE5r_currentURL"     type="hidden" value="https://www.bruze.com/web/guest/home?p_p_id=com_liferay_dynamic_data_mapping_form_web_portlet_DDMFormPortlet_INSTANCE_WRjGfQOMzE5r&amp;p_p_lifecycle=0&amp;p_p_state=normal&amp;p_p_mode=view"   />
-				<input  class="field form-control"  id="_com_liferay_dynamic_data_mapping_form_web_portlet_DDMFormPortlet_INSTANCE_WRjGfQOMzE5r_redirect"    name="_com_liferay_dynamic_data_mapping_form_web_portlet_DDMFormPortlet_INSTANCE_WRjGfQOMzE5r_redirect"     type="hidden" value="https://www.bruze.com/web/guest/home?p_p_id=com_liferay_dynamic_data_mapping_form_web_portlet_DDMFormPortlet_INSTANCE_WRjGfQOMzE5r&amp;p_p_lifecycle=0&amp;p_p_state=normal&amp;p_p_mode=view"   />
-				<input  class="field form-control"  id="_com_liferay_dynamic_data_mapping_form_web_portlet_DDMFormPortlet_INSTANCE_WRjGfQOMzE5r_groupId"    name="_com_liferay_dynamic_data_mapping_form_web_portlet_DDMFormPortlet_INSTANCE_WRjGfQOMzE5r_groupId"     type="hidden" value="20122"   />
-				<input  class="field form-control"  id="_com_liferay_dynamic_data_mapping_form_web_portlet_DDMFormPortlet_INSTANCE_WRjGfQOMzE5r_formInstanceId"    name="_com_liferay_dynamic_data_mapping_form_web_portlet_DDMFormPortlet_INSTANCE_WRjGfQOMzE5r_formInstanceId"     type="hidden" value="36285"   />
-				<input  class="field form-control"  id="_com_liferay_dynamic_data_mapping_form_web_portlet_DDMFormPortlet_INSTANCE_WRjGfQOMzE5r_languageId"    name="_com_liferay_dynamic_data_mapping_form_web_portlet_DDMFormPortlet_INSTANCE_WRjGfQOMzE5r_languageId"     type="hidden" value="en_US"   />
-				<input  class="field form-control"  id="_com_liferay_dynamic_data_mapping_form_web_portlet_DDMFormPortlet_INSTANCE_WRjGfQOMzE5r_workflowAction"    name="_com_liferay_dynamic_data_mapping_form_web_portlet_DDMFormPortlet_INSTANCE_WRjGfQOMzE5r_workflowAction"     type="hidden" value="1"   />
-						<div class="ddm-form-basic-info">
-							<div class="container-fluid container-fluid-max-xl">
-								<h1 class="ddm-form-name">Contact</h1>
-							</div>
-						</div>
-						<div class="container-fluid container-fluid-max-xl ddm-form-builder-app ddm-form-builder-app-not-ready"id="ddmFormgwBpe36Wcontainer" >
-							<div id="ddmFormgwBpe36W">
-                                <div></div><!-- FORM HERE -->
+			<div class="contact-form-modal-container" tabindex="0">
+                <div class="contact-x">
+                    <a href="#"><span>×</span></a>
+                </div>
+
+                <div class="portlet-dropzone" id="layout-column_column-2">
+
+                    <!-- Contact heading -->
+                    <div class="portlet-boundary portlet-borderless portlet-journal-content" id="p_p_id_com_liferay_journal_content_web_portlet_JournalContentPortlet_INSTANCE_yirG299sDjo4_">
+                    <section class="portlet" id="portlet_com_liferay_journal_content_web_portlet_JournalContentPortlet_INSTANCE_yirG299sDjo4">
+                        <div class="portlet-content">
+                        <div class="autofit-float autofit-row portlet-header">
+                            <div class="autofit-col">
+                            <h2 class="portlet-title-text">Contact Form - Top</h2>
                             </div>
-				<input  class="field form-control"  id="_com_liferay_dynamic_data_mapping_form_web_portlet_DDMFormPortlet_INSTANCE_WRjGfQOMzE5r_empty"    name="_com_liferay_dynamic_data_mapping_form_web_portlet_DDMFormPortlet_INSTANCE_WRjGfQOMzE5r_empty"     type="hidden" value=""   />
-						</div>
-</form>
-				</div>
-	</div>
-			</div>
-	</div>
-</section>
-	</div>
-	<div class="portlet-boundary portlet-boundary_com_liferay_journal_content_web_portlet_JournalContentPortlet_  portlet-static portlet-static-end portlet-borderless portlet-journal-content " id="p_p_id_com_liferay_journal_content_web_portlet_JournalContentPortlet_INSTANCE_tbv9oEObry2w_">
-		<span id="p_com_liferay_journal_content_web_portlet_JournalContentPortlet_INSTANCE_tbv9oEObry2w"></span>
-<section class="portlet" id="portlet_com_liferay_journal_content_web_portlet_JournalContentPortlet_INSTANCE_tbv9oEObry2w">
-	<div class="portlet-content">
-		<div class="autofit-float autofit-row portlet-header">
-			<div class="autofit-col autofit-col-expand">
-				<h2 class="portlet-title-text">Contact: Office Email Addresses</h2>
-			</div>
-			<div class="autofit-col autofit-col-end">
-				<div class="autofit-section">
-<div class="visible-interaction">
-</div>				</div>
-			</div>
-		</div>
-			<div class=" portlet-content-container">
-	<div class="portlet-body">
-						<div class="" data-fragments-editor-item-id="20131-47282" data-fragments-editor-item-type="fragments-editor-mapped-item" >
-<div class="journal-content-article " data-analytics-asset-id="47280" data-analytics-asset-title="Contact: Office Email Addresses" data-analytics-asset-type="web-content">
-	<div class="office-email-addresses"><strong>BRUZE TORONTO</strong><p><a href="mailto:toronto@bruze.com">TORONTO@BRUZE.COM</a></p> <strong>BRUZE NEW YORK</strong><p><a href="mailto:newyork@bruze.com">NEWYORK@BRUZE.COM</a></p></div>
-</div>
-						</div>
-	</div>
-			</div>
-	</div>
-</section>
-	</div>
-</div>
-			</div>
+                        </div>
+                        <div class="portlet-body">
+                            <h2 class="lfr-ddm-form-page-title">Contact</h2>
+                        </div>
+                        </div>
+                    </section>
+                    </div>
+
+                    <!-- Contact form -->
+                    <div class="portlet-boundary portlet-borderless portlet-forms-display" id="p_p_id_com_liferay_dynamic_data_mapping_form_web_portlet_DDMFormPortlet_INSTANCE_WRjGfQOMzE5r_">
+                    <section class="portlet" id="portlet_com_liferay_dynamic_data_mapping_form_web_portlet_DDMFormPortlet_INSTANCE_WRjGfQOMzE5r">
+                        <div class="portlet-content">
+                        <div class="autofit-float autofit-row portlet-header">
+                            <div class="autofit-col">
+                            <h2 class="portlet-title-text">Form</h2>
+                            </div>
+                        </div>
+                        <div class="portlet-body">
+                            <div class="portlet-forms">
+
+                            <!-- TODO: set action to the new form endpoint -->
+                            <form action="#" method="post" class="form" id="_com_liferay_dynamic_data_mapping_form_web_portlet_DDMFormPortlet_INSTANCE_WRjGfQOMzE5r_fm" name="_com_liferay_dynamic_data_mapping_form_web_portlet_DDMFormPortlet_INSTANCE_WRjGfQOMzE5r_fm">
+
+                                <div class="ddm-form-basic-info">
+                                <div class="container-fluid">
+                                    <h1 class="ddm-form-name">Contact</h1>
+                                </div>
+                                </div>
+
+                                <div class="container-fluid ddm-form-builder-app" id="ddmFormgwBpe36Wcontainer">
+                                <div id="ddmFormgwBpe36W">
+                                    <div class="react-component-adapter">
+                                    <div class="lfr-ddm-form-container position-relative ddm-user-view-content">
+                                        <div class="ddm-layout-builder ddm-page-container-layout">
+                                        <div class="form-builder-layout">
+                                            <div class="active ddm-form-page lfr-ddm-form-page" data-ddm-page="0">
+
+                                            <!-- First Name (required) -->
+                                            <div>
+                                                <div class="position-relative row">
+                                                <div class="col-ddm col-md-12" data-ddm-field-column="0" data-ddm-field-page="0" data-ddm-field-row="0">
+                                                    <div class="ddm-field" data-field-name="FirstName">
+                                                    <div class="form-group" data-field-name="FirstName">
+                                                        <p class="ddm-label">
+                                                        <span class="reference-mark">
+                                                            <svg class="lexicon-icon" role="presentation" viewBox="0 0 512 512"><path d="M323.6,190l146.7-48.8L512,263.9l-149.2,47.6l93.6,125.2l-104.9,76.3l-96.1-126.4l-93.6,126.4L56.9,435.3l92.3-123.9L0,263.8l40.4-122.6L188.4,190v-159h135.3L323.6,190L323.6,190z"></path></svg>
+                                                        </span>
+                                                        </p>
+                                                        <div class="input-group">
+                                                        <div class="input-group-item">
+                                                            <input name="FirstName" type="text" class="form-control" placeholder="First Name *" aria-label="First name" value="" required>
+                                                        </div>
+                                                        </div>
+                                                    </div>
+                                                    </div>
+                                                </div>
+                                                </div>
+                                            </div>
+
+                                            <!-- Last Name (required) -->
+                                            <div>
+                                                <div class="position-relative row">
+                                                <div class="col-ddm col-md-12" data-ddm-field-column="0" data-ddm-field-page="0" data-ddm-field-row="1">
+                                                    <div class="ddm-field" data-field-name="LastName">
+                                                    <div class="form-group" data-field-name="LastName">
+                                                        <p class="ddm-label">
+                                                        <span class="reference-mark">
+                                                            <svg class="lexicon-icon" role="presentation" viewBox="0 0 512 512"><path d="M323.6,190l146.7-48.8L512,263.9l-149.2,47.6l93.6,125.2l-104.9,76.3l-96.1-126.4l-93.6,126.4L56.9,435.3l92.3-123.9L0,263.8l40.4-122.6L188.4,190v-159h135.3L323.6,190L323.6,190z"></path></svg>
+                                                        </span>
+                                                        </p>
+                                                        <input name="LastName" type="text" class="form-control ddm-field-text" placeholder="Last Name *" aria-label="Last name" value="" required>
+                                                    </div>
+                                                    </div>
+                                                </div>
+                                                </div>
+                                            </div>
+
+                                            <!-- Phone Number (optional) -->
+                                            <div>
+                                                <div class="position-relative row">
+                                                <div class="col-ddm col-md-12" data-ddm-field-column="0" data-ddm-field-page="0" data-ddm-field-row="2">
+                                                    <div class="ddm-field" data-field-name="PhoneNumber">
+                                                    <div class="form-group" data-field-name="PhoneNumber">
+                                                        <input name="PhoneNumber" type="text" class="form-control" placeholder="Phone Number" aria-label="Phone number" value="">
+                                                    </div>
+                                                    </div>
+                                                </div>
+                                                </div>
+                                            </div>
+
+                                            <!-- Email (required) -->
+                                            <div>
+                                                <div class="position-relative row">
+                                                <div class="col-ddm col-md-12" data-ddm-field-column="0" data-ddm-field-page="0" data-ddm-field-row="3">
+                                                    <div class="ddm-field" data-field-name="Email">
+                                                    <div class="form-group" data-field-name="Email">
+                                                        <p class="ddm-label">
+                                                        <span class="reference-mark">
+                                                            <svg class="lexicon-icon" role="presentation" viewBox="0 0 512 512"><path d="M323.6,190l146.7-48.8L512,263.9l-149.2,47.6l93.6,125.2l-104.9,76.3l-96.1-126.4l-93.6,126.4L56.9,435.3l92.3-123.9L0,263.8l40.4-122.6L188.4,190v-159h135.3L323.6,190L323.6,190z"></path></svg>
+                                                        </span>
+                                                        </p>
+                                                        <input name="Email" type="text" class="form-control ddm-field-text" placeholder="Email Address *" aria-label="Email address" value="" required >
+                                                    </div>
+                                                    </div>
+                                                </div>
+                                                </div>
+                                            </div>
+
+                                            <!-- Message (required) -->
+                                            <div>
+                                                <div class="position-relative row">
+                                                <div class="col-ddm col-md-12" data-ddm-field-column="0" data-ddm-field-page="0" data-ddm-field-row="4">
+                                                    <div class="ddm-field" data-field-name="Message">
+                                                    <div class="form-group" data-field-name="Message">
+                                                        <p class="ddm-label">
+                                                        <span class="reference-mark">
+                                                            <svg class="lexicon-icon" role="presentation" viewBox="0 0 512 512"><path d="M323.6,190l146.7-48.8L512,263.9l-149.2,47.6l93.6,125.2l-104.9,76.3l-96.1-126.4l-93.6,126.4L56.9,435.3l92.3-123.9L0,263.8l40.4-122.6L188.4,190v-159h135.3L323.6,190L323.6,190z"></path></svg>
+                                                        </span>
+                                                        </p>
+                                                        <textarea name="Message" class="ddm-field-text form-control" placeholder="Type your message here... *" aria-label="Message" required></textarea>
+                                                    </div>
+                                                    </div>
+                                                </div>
+                                                </div>
+                                            </div>
+
+                                            </div>
+                                        </div>
+                                        </div>
+                                        <div class="lfr-ddm-form-pagination-controls">
+                                        <button class="float-right lfr-ddm-form-submit btn btn-primary" type="submit">Submit</button>
+                                        </div>
+                                    </div>
+                                    </div>
+                                </div>
+                                </div>
+                                <input type="hidden" name="form" value="contact">
+                                <div class="hp-field" aria-hidden="true">
+                                <label>Leave this field empty
+                                    <input type="text" name="hp_website" tabindex="-1" autocomplete="off">
+                                </label>
+                                </div>  
+                            </form>
+
+                            </div>
+                        </div>
+                        </div>
+                    </section>
+                    </div>
+
+                    <!-- Office email addresses -->
+                    <div class="portlet-boundary portlet-borderless portlet-journal-content" id="p_p_id_com_liferay_journal_content_web_portlet_JournalContentPortlet_INSTANCE_tbv9oEObry2w_">
+                    <section class="portlet" id="portlet_com_liferay_journal_content_web_portlet_JournalContentPortlet_INSTANCE_tbv9oEObry2w">
+                        <div class="portlet-content">
+                        <div class="autofit-float autofit-row portlet-header">
+                            <div class="autofit-col">
+                            <h2 class="portlet-title-text">Contact: Office Email Addresses</h2>
+                            </div>
+                        </div>
+                        <div class="portlet-body">
+                            <div class="office-email-addresses">
+                            <strong>BRUZE TORONTO</strong>
+                            <p><a href="mailto:toronto@bruze.com">TORONTO@BRUZE.COM</a></p>
+                            <strong>BRUZE NEW YORK</strong>
+                            <p><a href="mailto:newyork@bruze.com">NEWYORK@BRUZE.COM</a></p>
+                            </div>
+                        </div>
+                        </div>
+                    </section>
+                    </div>
+
+                </div>
+            </div>
 		</div>
 	</div>
 	<div class="portlet-layout row">
 		<div class="portlet-column portlet-column-only join-us-form red" id="column-3">
 			<div class="join-us-form-modal-container">
-				<div class="join-x">
-					<a href="#"><span>×</span>
-					</a>
-				</div>
-				<div class="portlet-dropzone portlet-column-content portlet-column-content-only" id="layout-column_column-3">
-	<div class="portlet-boundary portlet-boundary_com_liferay_journal_content_web_portlet_JournalContentPortlet_  portlet-static portlet-static-end portlet-borderless portlet-journal-content " id="p_p_id_com_liferay_journal_content_web_portlet_JournalContentPortlet_INSTANCE_XlU03cLUGPd0_">
-		<span id="p_com_liferay_journal_content_web_portlet_JournalContentPortlet_INSTANCE_XlU03cLUGPd0"></span>
-<section class="portlet" id="portlet_com_liferay_journal_content_web_portlet_JournalContentPortlet_INSTANCE_XlU03cLUGPd0">
-	<div class="portlet-content">
-		<div class="autofit-float autofit-row portlet-header">
-			<div class="autofit-col autofit-col-expand">
-				<h2 class="portlet-title-text">Join Us Form Blurb</h2>
-			</div>
-			<div class="autofit-col autofit-col-end">
-				<div class="autofit-section">
-<div class="visible-interaction">
-</div>				</div>
-			</div>
-		</div>
-			<div class=" portlet-content-container">
-	<div class="portlet-body">
-						<div class="" data-fragments-editor-item-id="20131-36729" data-fragments-editor-item-type="fragments-editor-mapped-item" >
-<div class="journal-content-article " data-analytics-asset-id="36727" data-analytics-asset-title="Join Us Form Blurb" data-analytics-asset-type="web-content">
-	<div class="form-intro"><h2>Join The Team</h2><p>For over 15 years, we’ve worked with the best brands in financial services.</p><p>We believe in partnership, both externally and internally. If working with some of the most talented people in the business, at a place that will always have your back sounds good to you, then we hope you’ll join us.</p></div>
-</div>
-						</div>
-	</div>
-			</div>
-	</div>
-</section>
-	</div>
-	<div class="portlet-boundary portlet-boundary_com_liferay_dynamic_data_mapping_form_web_portlet_DDMFormPortlet_  portlet-static portlet-static-end portlet-borderless portlet-forms-display " id="p_p_id_com_liferay_dynamic_data_mapping_form_web_portlet_DDMFormPortlet_INSTANCE_AbszoRRo9mLs_">
-		<span id="p_com_liferay_dynamic_data_mapping_form_web_portlet_DDMFormPortlet_INSTANCE_AbszoRRo9mLs"></span>
-<section class="portlet" id="portlet_com_liferay_dynamic_data_mapping_form_web_portlet_DDMFormPortlet_INSTANCE_AbszoRRo9mLs">
-	<div class="portlet-content">
-		<div class="autofit-float autofit-row portlet-header">
-			<div class="autofit-col autofit-col-expand">
-				<h2 class="portlet-title-text">Form</h2>
-			</div>
-			<div class="autofit-col autofit-col-end">
-				<div class="autofit-section">
-				</div>
-			</div>
-		</div>
-			<div class=" portlet-content-container">
-	<div class="portlet-body">
-				<div class="portlet-forms">
-<form action="https://www.bruze.com/web/guest/home?p_p_id=com_liferay_dynamic_data_mapping_form_web_portlet_DDMFormPortlet_INSTANCE_AbszoRRo9mLs&amp;p_p_lifecycle=1&amp;p_p_state=normal&amp;p_p_mode=view&amp;_com_liferay_dynamic_data_mapping_form_web_portlet_DDMFormPortlet_INSTANCE_AbszoRRo9mLs_javax.portlet.action=addFormInstanceRecord&amp;p_auth=JlhvNw6N" class="form  " data-fm-namespace="_com_liferay_dynamic_data_mapping_form_web_portlet_DDMFormPortlet_INSTANCE_AbszoRRo9mLs_" id="_com_liferay_dynamic_data_mapping_form_web_portlet_DDMFormPortlet_INSTANCE_AbszoRRo9mLs_fm" method="post" name="_com_liferay_dynamic_data_mapping_form_web_portlet_DDMFormPortlet_INSTANCE_AbszoRRo9mLs_fm" data-DDMFormInstanceId="36380" data-senna-off="true" >
-				<input  class="field form-control"  id="_com_liferay_dynamic_data_mapping_form_web_portlet_DDMFormPortlet_INSTANCE_AbszoRRo9mLs_formDate"    name="_com_liferay_dynamic_data_mapping_form_web_portlet_DDMFormPortlet_INSTANCE_AbszoRRo9mLs_formDate"     type="hidden" value="1791234513945"   />
-				<input  class="field form-control"  id="_com_liferay_dynamic_data_mapping_form_web_portlet_DDMFormPortlet_INSTANCE_AbszoRRo9mLs_currentURL"    name="_com_liferay_dynamic_data_mapping_form_web_portlet_DDMFormPortlet_INSTANCE_AbszoRRo9mLs_currentURL"     type="hidden" value="https://www.bruze.com/web/guest/home?p_p_id=com_liferay_dynamic_data_mapping_form_web_portlet_DDMFormPortlet_INSTANCE_AbszoRRo9mLs&amp;p_p_lifecycle=0&amp;p_p_state=normal&amp;p_p_mode=view"   />
-				<input  class="field form-control"  id="_com_liferay_dynamic_data_mapping_form_web_portlet_DDMFormPortlet_INSTANCE_AbszoRRo9mLs_groupId"    name="_com_liferay_dynamic_data_mapping_form_web_portlet_DDMFormPortlet_INSTANCE_AbszoRRo9mLs_groupId"     type="hidden" value="20122"   />
-				<input  class="field form-control"  id="_com_liferay_dynamic_data_mapping_form_web_portlet_DDMFormPortlet_INSTANCE_AbszoRRo9mLs_formInstanceId"    name="_com_liferay_dynamic_data_mapping_form_web_portlet_DDMFormPortlet_INSTANCE_AbszoRRo9mLs_formInstanceId"     type="hidden" value="36380"   />
-				<input  class="field form-control"  id="_com_liferay_dynamic_data_mapping_form_web_portlet_DDMFormPortlet_INSTANCE_AbszoRRo9mLs_languageId"    name="_com_liferay_dynamic_data_mapping_form_web_portlet_DDMFormPortlet_INSTANCE_AbszoRRo9mLs_languageId"     type="hidden" value="en_US"   />
-				<input  class="field form-control"  id="_com_liferay_dynamic_data_mapping_form_web_portlet_DDMFormPortlet_INSTANCE_AbszoRRo9mLs_workflowAction"    name="_com_liferay_dynamic_data_mapping_form_web_portlet_DDMFormPortlet_INSTANCE_AbszoRRo9mLs_workflowAction"     type="hidden" value="1"   />
-						<div class="ddm-form-basic-info">
-							<div class="container-fluid container-fluid-max-xl">
-								<h1 class="ddm-form-name">Join the Team</h1>
-									<p class="ddm-form-description">Official Version</p>
-							</div>
-						</div>
-						<div class="container-fluid container-fluid-max-xl ddm-form-builder-app ddm-form-builder-app-not-ready"id="ddmForm9H3Zvsvecontainer" >
-							<div id="ddmForm9H3Zvsve">
-                                <div><!-- Form Here -->
+                <div class="join-x">
+                    <a href="#"><span>×</span></a>
+                </div>
 
+                <div class="portlet-dropzone" id="layout-column_column-3">
+
+                <!-- Join Us blurb -->
+                    <div class="portlet-boundary portlet-borderless portlet-journal-content" id="p_p_id_com_liferay_journal_content_web_portlet_JournalContentPortlet_INSTANCE_XlU03cLUGPd0_">
+                        <section class="portlet" id="portlet_com_liferay_journal_content_web_portlet_JournalContentPortlet_INSTANCE_XlU03cLUGPd0">
+                            <div class="portlet-content">
+                                <div class="autofit-float autofit-row portlet-header">
+                                    <div class="autofit-col">
+                                    <h2 class="portlet-title-text">Join Us Form Blurb</h2>
+                                    </div>
+                                </div>
+                                <div class="portlet-body">
+                                    <div class="form-intro">
+                                    <h2>Join The Team</h2>
+                                    <p>For over 15 years, we’ve worked with the best brands in financial services.</p>
+                                    <p>We believe in partnership, both externally and internally. If working with some of the most talented people in the business, at a place that will always have your back sounds good to you, then we hope you’ll join us.</p>
+                                    </div>
                                 </div>
                             </div>
-				<input  class="field form-control"  id="_com_liferay_dynamic_data_mapping_form_web_portlet_DDMFormPortlet_INSTANCE_AbszoRRo9mLs_empty"    name="_com_liferay_dynamic_data_mapping_form_web_portlet_DDMFormPortlet_INSTANCE_AbszoRRo9mLs_empty"     type="hidden" value=""   />
-						</div>
-</form>
-				</div>
-	</div>
-			</div>
-	</div>
-</section>
-	</div>
+                        </section>
+                    </div>
+
+                    <!-- Join Us form -->
+                    <div class="portlet-boundary portlet-borderless portlet-forms-display" id="p_p_id_com_liferay_dynamic_data_mapping_form_web_portlet_DDMFormPortlet_INSTANCE_AbszoRRo9mLs_">
+                    <section class="portlet" id="portlet_com_liferay_dynamic_data_mapping_form_web_portlet_DDMFormPortlet_INSTANCE_AbszoRRo9mLs">
+                        <div class="portlet-content">
+                        <div class="autofit-float autofit-row portlet-header">
+                            <div class="autofit-col">
+                            <h2 class="portlet-title-text">Form</h2>
+                            </div>
+                        </div>
+                        <div class="portlet-body">
+                            <div class="portlet-forms">
+
+                            <!-- TODO: set action to the new form endpoint -->
+                            <form action="#" method="post" class="form" id="_com_liferay_dynamic_data_mapping_form_web_portlet_DDMFormPortlet_INSTANCE_AbszoRRo9mLs_fm" name="_com_liferay_dynamic_data_mapping_form_web_portlet_DDMFormPortlet_INSTANCE_AbszoRRo9mLs_fm">
+
+                                <div class="ddm-form-basic-info">
+                                <div class="container-fluid">
+                                    <h1 class="ddm-form-name">Join the Team</h1>
+                                    <p>Official Version</p>
+                                </div>
+                                </div>
+
+                                <div class="container-fluid ddm-form-builder-app" id="ddmForm9H3Zvsvecontainer">
+                                <div id="ddmForm9H3Zvsve">
+                                    <div class="react-component-adapter">
+                                    <div class="lfr-ddm-form-container position-relative ddm-user-view-content">
+                                        <div class="ddm-layout-builder ddm-page-container-layout">
+                                        <div class="form-builder-layout">
+                                            <div class="active ddm-form-page lfr-ddm-form-page" data-ddm-page="0">
+
+                                            <h2 class="lfr-ddm-form-page-title">JOIN THE TEAM</h2>
+
+                                            <!-- First Name (required) -->
+                                            <div>
+                                                <div class="position-relative row">
+                                                <div class="col-ddm col-md-12" data-ddm-field-column="0" data-ddm-field-page="0" data-ddm-field-row="0">
+                                                    <div class="ddm-field" data-field-name="Field99649245">
+                                                    <div class="form-group" data-field-name="Field99649245">
+                                                        <p class="ddm-label">First Name<span class="reference-mark"><svg class="lexicon-icon" role="presentation" viewBox="0 0 512 512"><path d="M323.6,190l146.7-48.8L512,263.9l-149.2,47.6l93.6,125.2l-104.9,76.3l-96.1-126.4l-93.6,126.4L56.9,435.3l92.3-123.9L0,263.8l40.4-122.6L188.4,190v-159h135.3L323.6,190L323.6,190z"></path></svg></span></p>
+                                                        <input name="FirstName" type="text" class="form-control ddm-field-text" placeholder="First Name" aria-label="First name" value="" required>
+                                                    </div>
+                                                    </div>
+                                                </div>
+                                                </div>
+                                            </div>
+
+                                        <!-- Last Name (required) -->
+                                        <div>
+                                            <div class="position-relative row">
+                                            <div class="col-ddm col-md-12" data-ddm-field-column="0" data-ddm-field-page="0" data-ddm-field-row="1">
+                                                <div class="ddm-field" data-field-name="Field85097689">
+                                                <div class="form-group" data-field-name="Field85097689">
+                                                    <p class="ddm-label">Last Name<span class="reference-mark"><svg class="lexicon-icon" role="presentation" viewBox="0 0 512 512"><path d="M323.6,190l146.7-48.8L512,263.9l-149.2,47.6l93.6,125.2l-104.9,76.3l-96.1-126.4l-93.6,126.4L56.9,435.3l92.3-123.9L0,263.8l40.4-122.6L188.4,190v-159h135.3L323.6,190L323.6,190z"></path></svg></span></p>
+                                                    <input name="LastName" type="text" class="form-control ddm-field-text" placeholder="Last Name" aria-label="Last name" value="" required>
+                                                </div>
+                                                </div>
+                                            </div>
+                                            </div>
+                                        </div>
+
+                              <!-- Email (required) -->
+                              <div>
+                                <div class="position-relative row">
+                                  <div class="col-ddm col-md-12" data-ddm-field-column="0" data-ddm-field-page="0" data-ddm-field-row="2">
+                                    <div class="ddm-field" data-field-name="Field85138148">
+                                      <div class="form-group" data-field-name="Field85138148">
+                                        <p class="ddm-label">Email<span class="reference-mark"><svg class="lexicon-icon" role="presentation" viewBox="0 0 512 512"><path d="M323.6,190l146.7-48.8L512,263.9l-149.2,47.6l93.6,125.2l-104.9,76.3l-96.1-126.4l-93.6,126.4L56.9,435.3l92.3-123.9L0,263.8l40.4-122.6L188.4,190v-159h135.3L323.6,190L323.6,190z"></path></svg></span></p>
+                                        <input name="Email" type="text" class="form-control ddm-field-text" placeholder="Email" aria-label="Email address" value="" required>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+
+                              <!-- Phone Number (optional) -->
+                              <div>
+                                <div class="position-relative row">
+                                  <div class="col-ddm col-md-12" data-ddm-field-column="0" data-ddm-field-page="0" data-ddm-field-row="3">
+                                    <div class="ddm-field" data-field-name="Field07239228">
+                                      <div class="form-group" data-field-name="Field07239228">
+                                        <p class="ddm-label">Phone Number</p>
+                                        <input name="PhoneNumber" type="text" class="form-control" placeholder="Phone Number" aria-label="Phone number" value="" >
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+
+                              <!-- Position (custom select) -->
+                              <div>
+                                <div class="position-relative row">
+                                  <div class="col-ddm col-md-12" data-ddm-field-column="0" data-ddm-field-page="0" data-ddm-field-row="4">
+                                    <div class="ddm-field" data-field-name="Field89238605">
+                                      <div class="form-group" data-field-name="Field89238605">
+                                        <select name="Position" aria-label="Position" class="form-control select-field-trigger" id="_com_liferay_dynamic_data_mapping_form_web_portlet_DDMFormPortlet_INSTANCE_AbszoRRo9mLs_ddm$$Field89238605$u8DNghnI$0$$en_US">
+                                            <option value="" selected disabled>Position</option>
+                                            <option value="java-engineer">Java Engineer</option>
+                                            <option value="developer">Developer</option>
+                                            <option value="designer">Designer</option>
+                                            <option value="other">Other</option>
+                                        </select>
+                                        </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+
+                              <!-- Link to CV (required) -->
+                              <div>
+                                <div class="position-relative row">
+                                  <div class="col-ddm col-md-12" data-ddm-field-column="0" data-ddm-field-page="0" data-ddm-field-row="5">
+                                    <div class="ddm-field" data-field-name="Field73298653">
+                                      <div class="form-group" data-field-name="Field73298653">
+                                        <p class="ddm-label"><span class="reference-mark"><svg class="lexicon-icon" role="presentation" viewBox="0 0 512 512"><path d="M323.6,190l146.7-48.8L512,263.9l-149.2,47.6l93.6,125.2l-104.9,76.3l-96.1-126.4l-93.6,126.4L56.9,435.3l92.3-123.9L0,263.8l40.4-122.6L188.4,190v-159h135.3L323.6,190L323.6,190z"></path></svg></span></p>
+                                        <input name="CVLink" type="text" class="form-control ddm-field-text" placeholder="Link to CV (LinkedIn, website, etc.)" aria-label="Link to CV (LinkedIn, website, etc.)" value="">
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+
+                            </div>
+                          </div>
+                        </div>
+                        <div class="lfr-ddm-form-pagination-controls">
+                          <button class="float-right lfr-ddm-form-submit btn btn-primary" type="submit">Submit</button>
+                        </div>
+                        <input type="hidden" name="form" value="join">
+                        <div class="hp-field" aria-hidden="true">
+                        <label>Leave this field empty
+                            <input type="text" name="hp_website" tabindex="-1" autocomplete="off">
+                        </label>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+              </form>
+
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+  </div>
 </div>
-			</div>
 		</div>
 	</div>
 </div>
 <form action="#" aria-hidden="true" class="hide" id="hrefFm" method="post" name="hrefFm"><span></span><input hidden type="submit"/></form>	</section>
 </div>
+  <script src="https://www.google.com/recaptcha/api.js?render=6LdDQR0uAAAAAIoWjWyhLHOKVDAiyx_x2XT1DR37"></script>
 	<script type="text/javascript">
 		// <![CDATA[
-				function submitBruzeForm(formID){
-    if (checkRequiredFields(formID)){
-        var formURL = $('#'+formID).attr('action');
-        var formData = {};
-        $('#'+formID).serializeArray().map(function(x){formData[x.name] = x.value;});
-        AUI().use('aui-io-request', function(A){
-            A.io.request(formURL, {
-                method: 'post',
-                dataType: 'json',
-                data: formData,
-                on: {
-                    success: function() {
-                        var successMessage = "Thanks, we'll get back to you soon."
-                        var buttonContainer = $("#" + formID ).find(".lfr-ddm-form-pagination-controls ");
-                        $(buttonContainer).addClass("success").find("button").html(successMessage).prop('disabled',true);
+var RECAPTCHA_SITE_KEY = '6LdDQR0uAAAAAIoWjWyhLHOKVDAiyx_x2XT1DR37';
+
+function submitBruzeForm(formID) {
+    var $form     = $('#' + formID);
+    var $button   = $form.find('button[type=submit]');
+    var $controls = $form.find('.lfr-ddm-form-pagination-controls');
+    var formName  = $form.find('input[name="form"]').val();   // "contact" or "join"
+
+    if ($button.prop('disabled')) { return; }                 // ignore double clicks
+    if (typeof grecaptcha === 'undefined' || !formName) { return; }
+
+    $form.find('.form-error').remove();
+    $form.find('[aria-invalid]').removeAttr('aria-invalid');
+    $button.prop('disabled', true);
+    document.addEventListener('invalid', function (e) {
+        var $el = $(e.target);
+        if ($el.closest('.contact-form, .join-us-form').length) {
+            $el.attr('aria-invalid', 'true');
+            $el.closest('form').find('.form-error').remove();
+        }
+    }, true);
+    grecaptcha.ready(function () {
+        grecaptcha.execute(RECAPTCHA_SITE_KEY, { action: formName }).then(function (token) {
+            $.post('send-form.php',
+                   $form.serialize() + '&g-recaptcha-response=' + encodeURIComponent(token),
+                   null, 'json')
+                .done(function () {
+                    $controls.addClass('success');
+                    $button.html("Thanks, we'll get back to you soon.");
+                })
+                .fail(function (xhr) {
+                    var res = xhr.responseJSON || {};
+                    var msg = res.error || $.map(res.errors || {}, function (m) { return m; }).join(' ') || 'The message could not be sent. Please try again.';
+                    if (res.errors) {
+                        $.each(res.errors, function (name) {
+                            $form.find('[name="' + name + '"]').attr('aria-invalid', 'true');
+                        });
+                        $form.find('[aria-invalid]').first().focus();
                     }
-                }
-            });
+                    $controls.before('<p class="form-error" role="alert">' + msg + '</p>');
+                    $button.prop('disabled', false);
+                });
+        }).catch(function (err) {
+            console.error('Form submit failed:', err);
+            $controls.before('<p class="form-error" role="alert">Verification could not be completed. Please try again.</p>');
+            $button.prop('disabled', false);
         });
-    }
+    });
 }
-function checkRequiredFields(formID){
-    var form = $('#'+formID);
-    var requiredFields = form.find('input,textarea,select');
-    for (i=0; i < requiredFields.length; i++){
-        requiredFields[i].focus();
-    }
-    if (form.find('.has-error').length > 0) return false;
-    else return true;
-}
+
 function onElementInserted(containerSelector, elementSelector, callback){
     var onMutationsObserved = function(mutations){
         mutations.forEach(function(mutation){
@@ -1755,7 +1963,7 @@ function onElementInserted(containerSelector, elementSelector, callback){
     var target = $(containerSelector)[0];
     var config = {childList:true, subtree:true};
     var MutationObserver = window.MutationObserver || window.WebKitMutationObserver;
-    var observer = new MutationObserver(onMutationsObserved);    
+    var observer = new MutationObserver(onMutationsObserved);
     observer.observe(target, config);
 }
 function onElementVisible(containerSelector, callback){
@@ -1769,16 +1977,21 @@ function onElementVisible(containerSelector, callback){
     var target = $(containerSelector)[0];
     var config = {attributes: true, attributeFilter:['class']};
     var MutationObserver = window.MutationObserver || window.WebKitMutationObserver;
-    var observer = new MutationObserver(onMutationsObserved);    
+    var observer = new MutationObserver(onMutationsObserved);
     observer.observe(target, config);
 }
 $(document).ready(function(){
+    $(document).on('input change', '[aria-invalid]', function () { $(this).removeAttr('aria-invalid'); });
+    document.addEventListener('invalid', function (e) {
+    if ($(e.target).closest('.contact-form, .join-us-form').length) { $(e.target).attr('aria-invalid', 'true'); }
+}, true);
+    
     var bruzeForm = $('.contact-form form, .join-us-form form');
-    bruzeForm.on('click', 'button[type=submit]', function(e){
-        var f = $(this).parents('form');
-        submitBruzeForm(f.attr('id'));
-        e.preventDefault();
-    }).on('click', 'button[type=reset]', function(e){
+
+   bruzeForm.on('submit', function(e){
+    e.preventDefault();
+    submitBruzeForm($(this).attr('id'));
+}).on('click', 'button[type=reset]', function(e){
         var self = this;
         self.setState({})
         e.preventDefault();

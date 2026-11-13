@@ -132,7 +132,7 @@
         function freeze() { 
             var scrollbarWidth = window.innerWidth - document.documentElement.clientWidth;
             $("body").addClass("freeze").css({
-                paddingRight: scrollbarWidth + 'px'
+                // paddingRight: scrollbarWidth + 'px'
             })
             $('.vertical-centering-line').css({
                 'left': 'calc(50% - calc((' + scrollbarWidth + 'px)/2))'
@@ -141,7 +141,7 @@
         function thaw() {
             var scrollbarWidth = window.innerWidth - document.documentElement.clientWidth;
             $("body").removeClass("freeze").css({
-                paddingRight: 0
+                // paddingRight: 0
             })
             $('.vertical-centering-line').css({
                 'left': 'calc(50% - calc((' + scrollbarWidth + 'px)/2))'

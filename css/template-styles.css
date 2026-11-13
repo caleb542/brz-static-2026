@@ -3621,7 +3621,7 @@ div#bruze-nav ul li a:focus{
   color: #ffc65c;
 }
 .recaptcha-note {
-  margin: 1rem 0 2rem 0;
+  margin: 1rem 1rem 2rem 1rem;
   text-align: center;
   font-family: 'Lato', sans-serif;
   font-size: 12px;
@@ -3630,7 +3630,7 @@ div#bruze-nav ul li a:focus{
 }
 .recaptcha-note a {
     font-family: 'Lato', sans-serif;
-  color: inherit;
+  color: #d90280;
   text-decoration: underline;
   text-underline-offset: 2px;
 }

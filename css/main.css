@@ -57,29 +57,6 @@ span.alert {
     text-align: left
 }
 
-.quick-access-nav {
-    position: absolute;
-    top: -1000px;
-    width: 100%;
-    z-index: 1000
-}
-
-.quick-access-nav a {
-    background: #333;
-    background: rgba(51,51,51,0.9);
-    border: 1px solid #fff;
-    left: 0;
-    outline: 0;
-    padding: 8px;
-    position: absolute;
-    right: 0;
-    text-align: center
-}
-
-.quick-access-nav a:focus {
-    color: #fff;
-    top: 1000px
-}
 
 @media(max-width: 991.98px) {
     .responsive-table-horizontal {
@@ -3448,24 +3425,6 @@ body.portlet {
     cursor: auto
 }
 
-.portlet-minimized .portlet-content {
-    padding: 0
-}
-
-.portlet-nested-portlets .portlet-boundary {
-    left: 0 !important;
-    position: relative !important;
-    top: 0 !important
-}
-
-.portlet-layout .portlet-header {
-    margin-bottom: 1rem
-}
-
-.portlet-draggable .portlet-topper {
-    cursor: move
-}
-
 @media(min-width: 576px) {
     .portlet .visible-interaction {
         display:none
@@ -4307,10 +4266,6 @@ body>.lfr-menu-list ul,.active-area-proxy,.entry-display-style .entry-thumbnail,
     animation: lfr-drop-active 1s ease .2s infinite
 }
 
-.quick-access-nav a {
-    box-shadow: rgba(0,0,0,0.1) 1px 1px 1px
-}
-
 .cke_toolbar.cke_toolbar__a11yhelpbtn .cke_toolgroup,.cke_toolbar.cke_toolbar__a11yhelpbtn .cke_toolgroup:hover {
     box-shadow: initial
 }
@@ -4479,11 +4434,13 @@ input.switch:empty ~ .switch-bar:after,input.switch:empty ~ .switch-bar:before,i
 }
 
 .icon-bruze-logo-lg:before {
-    content: '\42'
+    content: '\42';
+    content: '\42'/ "";
 }
 
 .icon-bruze-logo-sm:before {
-    content: '\62'
+    content: '\62';
+    content: '\62'/ "";
 }
 
 body {
@@ -4809,7 +4766,8 @@ button.btn-monospaced.ml-auto.navbar-toggler:focus {
     margin-left: -5px
 }
 
-.button.contact-button a {
+.button.contact-button a,
+ .button.contact-button button{
     display: inline-block;
     color: #ffc65c;
     border-radius: 56px;
@@ -4820,14 +4778,19 @@ button.btn-monospaced.ml-auto.navbar-toggler:focus {
     white-space: nowrap
 }
 
-.button.contact-button a:hover,.button.contact-button a:focus {
+.button.contact-button a:hover,
+.button.contact-button a:focus,
+.button.contact-button button:focus,
+.button.contact-button button:hover
+ {
     background: #ffc65c;
     color: #112746;
     text-decoration: none;
     transition: all .4s linear
 }
 
-.button.join-team a {
+.button.join-team a,
+.button.join-team button {
     display: inline-block;
     color: #ffc65c;
     border-radius: 56px;
@@ -4839,7 +4802,8 @@ button.btn-monospaced.ml-auto.navbar-toggler:focus {
     text-decoration: none
 }
 
-.button.join-team a:hover,.button.join-team a:focus {
+.button.join-team a:hover,.button.join-team a:focus,
+.button.join-team button:hover,.button.join-team button:focus {
     background: #ffc65c;
     transition: all .4s linear
 }
@@ -4983,7 +4947,11 @@ button.btn-monospaced.ml-auto.navbar-toggler:focus {
     right: 0
 }
 
-#section-4 .button.join-team a:hover,#section-4 .button.join-team a:focus {
+#section-4 .button.join-team a:hover,
+#section-4 .button.join-team a:focus,
+
+#section-4 .button.join-team button:hover,
+#section-4 .button.join-team button:focus  {
     color: #d90280;
     background: #ffc65c;
     text-decoration: none
@@ -5123,7 +5091,8 @@ button.btn-monospaced.ml-auto.navbar-toggler:focus {
     float: right
 }
 
-#section-5 .button.contact-button a {
+#section-5 .button.contact-button a,
+#section-5 .button.contact-button button {
     position: absolute;
     right: 0;
     top: 69px;
@@ -6445,7 +6414,8 @@ div.nav-toggle-container {
         transform: translateX(-50%)
     }
 
-    #section-5 .button.contact-button a {
+    #section-5 .button.contact-button a,
+    #section-5 .button.contact-button button     {
         position: relative;
         right: unset;
         left: unset;

@@ -1,4 +1,3 @@
-
 html {
      scrollbar-gutter: stable;
 }
@@ -6,6 +5,23 @@ body {
     padding: 0;
     margin: 0;
 }
+/* anchors converted to <button type="button">: drop UA button styling so the existing
+   rules style them as they styled the <a>. :where() = zero specificity, any rule below wins. */
+:where(.button.contact-button, .button.join-team, ul#team-leads li, .contact-x, .join-x, ul#dots li, #section-7 li) > button,
+:where(ul#team-leads li) button.card-x,
+:where(button.left-contact-button) {
+    appearance: none;
+    background: none;
+    border: 0;
+    margin: 0;
+    padding: 0;
+    font: inherit;
+    color: inherit;
+    letter-spacing: inherit;
+    text-align: inherit;
+    cursor: pointer;
+}
+
 /* @import url('https://fonts.googleapis.com/css2?family=Barlow:wght@400;
 @import url('https://fonts.googleapis.com/css2?family=Barlow:wght@400; */
 
@@ -73,16 +89,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-@media all and (min-width:0){
-     .portlet .visible-interaction{
-        z-index:20 !important;
-        top:36px !important;
-       
-        width:30px !important;
-       
-    
-    }
-}
+
 html, body {
     -webkit-font-smoothing: antialiased !important;
      text-rendering: geometricPrecision !important;
@@ -152,11 +159,7 @@ html, body {
     display:none;
     }
  
-    
- .has-control-menu .portlet-asset-publisher .asset-full-content.mb-5{
-        margin-bottom:0 !important;
-        position:relative !important;;
-    }
+
     
     .portlet-borderless .portlet-content{
         padding:0;
@@ -164,55 +167,6 @@ html, body {
     body.signed-out #wrapper .portlet-borderless .portlet-content{
         padding:0;
     }
-
-    .has-control-menu .portlet > .portlet-topper{
-        left:unset;
-        right:0;
-        top:56px;
-        z-index:20;
-    }
-    .has-control-menu form .portlet > .portlet-topper{
-        left:unset;
-        right:0;
-        top:0px;
-        z-index:20;
-    }
-    .has-control-menu .join-us-form .join-us-form-modal-container section.portlet header{
-        top:16px;
-    } 
-
-    
-    .has-control-menu .component-title {
-        margin: 0 0 0 10px !important;
-        position: absolute !important;
-        top: 0 !important;
-        bottom: unset !important;
-    }
-    .has-control-menu .portlet-body .asset-full-content:nth-child(2) .component-title{
-        top:unset !important;
-        bottom:calc(50% + 38px) !important;
-    }
-    .has-control-menu .component-title a.text-primary{
-     color:#ffc65c !important;
-    }
-    .has-control-menu .component-title a.text-primary:hover, a.text-primary:focus{
-        color:#fff !important;
-    }
-    
-    .has-control-menu .lfr-asset-anchor{
-        height:40px;
-        top:0;
-        position:absolute;
-        margin-top:0;
-    }
-
-
-
-    
-    .has-control-menu #wrapper{
-        margin-top:-1px;
-    }
-  /*      end admin only */  
     body{
         width:100%;
     }
@@ -227,11 +181,7 @@ html, body {
     #section-1:focus,#section-2:focus,#section-3:focus,#section-4:focus,#section-5:focus,#section-6:focus{
         outline:none;
     }
-    body.freeze{
-        overflow-y:hidden !important;
-        background:#d90280;
-        /*position:fixed;*/
-    }
+   
     html{
         background:#122746;
     }
@@ -244,15 +194,7 @@ html, body {
     body.signed-out section#content{
     margin: 0 !important;
     }
-    body.freeze #wrapper{
-      
-        overflow-y:hidden !important;
-    }
-    body.freeze,
-    body.freeze .overlay-teams {
-        touch-action: none !important;
-    }
-
+  
     .left.contact-button {
         color: #ffc65c;
         text-decoration: none;
@@ -270,8 +212,8 @@ html, body {
         color:#ffc65c;
         text-decoration: none;
     }
-   .button.join-team a,
-   .button.contact-button a{
+   .button.join-team button,
+   .button.contact-button button{
        border-width:2px !important;
        padding:7px 38px 5px 38px;
        text-decoration: none;
@@ -325,6 +267,7 @@ html, body {
         transition:all 1000ms ;
      }
     .contact-form .contact-form-modal-container{
+        border:0;
         position:fixed;
         left:0;
         transform:translateX(-100%);
@@ -344,6 +287,7 @@ html, body {
      }
    
      .join-us-form .join-us-form-modal-container {
+        border:0;
         position: fixed;
         left: 0;
         transform: translateX(-100%);
@@ -360,34 +304,8 @@ html, body {
      .join-us-form-modal-container:focus-visible{
          outline:none;
      }
-    .form-overlay {
-        display: none;
-        position: fixed;
-        width: 100%;
-        height: 5000vh;
-        background-color:#d7028080;
-        overflow: hidden;
-         -webkit-backdrop-filter: blur(3px);
-        backdrop-filter: blur(3px);
-        z-index:-101;
-        z-index:8;
-    }
-    .form-overlay.show {
-        display: block;
-        height: 5000vh;
-        width: 100vw;
-        -webkit-backdrop-filter: blur(3px);
-        backdrop-filter: blur(3px);
-        background-color: rgba(217,2,128,0.5);
-        /*animation: showoverlay 0.6s forwards;
-        will-change: transform, opacity, backdrop-filter;
-        */
-        z-index: 8 !important;
-    }
-/*    .dontshow{
-       animation: hideoverlay 1.6s forwards; 
-    }*/
-    .portlet-layout .portlet-forms-display .autofit-float.autofit-row.portlet-header{
+
+    :is(.contact-form, .join-us-form) .portlet-forms-display .autofit-float.autofit-row.portlet-header{
         margin-bottom:0;
     }
     .contact-form .lfr-ddm-form-page-title{
@@ -441,38 +359,7 @@ html, body {
         text-decoration: none;
     }
     
-    @keyframes hideoverlay{
-         0% {
-            opacity:1;
-            z-index:5;
-        }
-        90%{
-            z-index:5;
-            opacity:0;
-        }   
-        100%{
-            
-            opacity:0;
-            z-index:-1;
-        }
-    }
-    @keyframes showoverlay{
-        0% {
-            position:fixed;
-            opacity:0;
-            z-index:-1;
-        }
-        10%{
-             position:fixed;
-            z-index:5;
-            opacity:0;
-        }
-        100%{
-            position:fixed;
-            opacity:1;
-            z-index:5;
-        }
-    }
+  
        @keyframes hidebio{
          0% {
             opacity:1;
@@ -512,13 +399,7 @@ html, body {
             z-index:20;
         }
     }
-    .blur-overlay {
-        filter: blur(2px);
-        transition: filter 1.75s;
-    }
    
-   
-    
     .join-us-form .join-us-form-modal-container{
         box-sizing:border-box;
     }
@@ -603,85 +484,7 @@ html, body {
      .down-chevron a:focus-visible{
         outline:none;
     }
-    div#bruze-nav ul {
-        display:grid;
-        place-content:center;
-    }
-    div#bruze-nav ul li {
-        width:auto;
-        white-space:nowrap;
-    }
-    div#bruze-nav ul li a {
-        display: block;
-        text-decoration: none;
-    }
-    div#bruze-nav ul li:hover{
-        text-decoration:none;
-    }
-    html{
-       scroll-behavior:smooth;
-    }
-    button.btn-monospaced.ml-auto.navbar-toggler{
-        position:absolute;
-        left:unset;
-        right:unset;
-        top:unset;
-        width:28px;
-        z-index:7;
-    }
-    button.btn-monospaced.ml-auto.navbar-toggler:focus{
-    outline:none;
-    }
-
-    button.btn-monospaced.ml-auto.navbar-toggler.collapsed{
-        transform:translateX(0);
-    }
-    div#bruze-nav{
-        position:fixed;
-        top:0;
-        padding-top:60px;
-    }
-    div#bruze-nav {
-        left:0;
-        transform: translateX(75vw);
-        transition:all 200ms ease-out;
-        width:100%;
-        height:100vh;
-        z-index:5;
-    }
-    div#bruze-nav nav ul li {
-        padding:0 10px;
-    }
-    div#bruze-nav nav ul li a{
-        text-transform:uppercase;
-        height:56px;
-        line-height:56px;
-        margin-left:-10px;
-        padding-left:10px;
-    }
-    div#bruze-nav nav{
-        margin-top:10%;
-        margin-left:50%;
-        transform: translateX(-50%);
-    }
-    
-    div#bruze-nav.show {
-        left: 0%;
-        width: 100%;
-        transform: translateX(0%);
-        transition:all 200ms ease-out;
-    }
-    div#bruze-nav ul li.selected:hover {
-        background: #d90280;
-    }
-    div#bruze-nav ul li{
-        background:transparent;
-        transition:all 500ms;
-    }
-    div#bruze-nav ul li:hover{
-        background: #fff;
-        transition:all 240ms ease;
-    }
+   
     #wrapper{
         overflow-y:hidden;
     }
@@ -713,16 +516,16 @@ html, body {
     #section-4 ul {
         padding-top:0;
     }
-    ul#team-leads li a:focus {
+    ul#team-leads li button:focus {
         overflow: visible;
         outline: none;
     }
-    #section-4 ul#team-leads > li > a:focus > span{
+    #section-4 ul#team-leads > li > button:focus > span{
         background-color: #fc6;
         background-blend-mode: multiply;
     }
-    ul#team-leads li a:focus strong,
-    ul#team-leads li a:focus p {
+    ul#team-leads li button:focus strong,
+    ul#team-leads li button:focus p {
         color:#ffc65c;
     }
   
@@ -740,7 +543,7 @@ html, body {
         display: grid;
         place-content: center;
     }
-    ul#team-leads .team-member-card-x a{
+    ul#team-leads .team-member-card-x button{
         width:100%;
         display: grid;
         background: transparent;
@@ -752,7 +555,7 @@ html, body {
 
     }
     ul#team-leads .team-member-card-x svg,
-    ul#team-leads .team-member-card-x a{
+    ul#team-leads .team-member-card-x button{
         fill: #FFC65C;
         color:#ffc65c;
         width: 30px;
@@ -770,13 +573,13 @@ html, body {
 
         }
       
-      ul#team-leads .team-member-card-x a:focus{
+      ul#team-leads .team-member-card-x button:focus{
           outline:none;
       }    
-     ul#team-leads .team-member-card-x a:focus svg,
-     ul#team-leads .team-member-card-x a:hover svg,
-     ul#team-leads .team-member-card-x a:focus,
-     ul#team-leads .team-member-card-x a:hover{
+     ul#team-leads .team-member-card-x button:focus svg,
+     ul#team-leads .team-member-card-x button:hover svg,
+     ul#team-leads .team-member-card-x button:focus,
+     ul#team-leads .team-member-card-x button:hover{
         background:#ffc65c;
         border-radius:50%;
         border: 2px solid #ffc65c;
@@ -787,7 +590,7 @@ html, body {
        
 
     }
-    #section-4 ul#team-leads .team-member-card-x a span{
+    #section-4 ul#team-leads .team-member-card-x button span{
         width: 30px;
         height: 30px;
         margin-bottom: 0;
@@ -924,7 +727,7 @@ html, body {
     position:absolute;
     bottom:40px;
 }
-ul.dots a:focus{
+ul.dots button:focus{
     outline:none;
 }
 
@@ -943,7 +746,10 @@ ul.dots a:focus{
 .contact-form .contact-form-modal-container.show,
 .join-us-form .join-us-form-modal-container.show{
     left:0vw;
-    outline:none;
+    margin: 0;           /* no auto margins left to centre with */
+    right: auto;         /* drops the browser's right: 0 */
+    max-width: none;     /* the browser's size caps for modal dialogs */
+    max-height: none;
  }
 
 .date-picker .input-group{
@@ -974,7 +780,7 @@ ul.dots a:focus{
 
 }
 .contact-form .form-control{
-    padding:8px 18px;
+    padding:8px 15px;            /* matches the Join Us inputs (textarea keeps this padding) */
 }
 .contact-form .portlet-forms form input,
 .join-us-form .portlet-forms form input,
@@ -1096,13 +902,14 @@ input.form-control.input-group-inset.input-group-inset-after {
     height: auto;
     max-width:unset;
 }
-#section-7 li, #section-7 li span, #section-7 li p, #section-7 li a{
+#section-7 li, #section-7 li span, #section-7 li p, #section-7 li a, #section-7 li button{
     font-size:14.5px;
     color:#fff;
     font-family:'Lato';
     font-weight:300;
 }
-#section-7 li a:focus{
+#section-7 li a:focus,
+#section-7 li button:focus{
     outline:none;
     text-decoration:underline;
 }
@@ -1149,12 +956,14 @@ input.form-control.input-group-inset.input-group-inset-after {
     align-items: center;
     justify-content: center;
 }
-.contact-x a, .join-x a{
+.contact-x button, .join-x button{
     font-family:'Icons', sans-serif;
     font-size: 47px;
+    display: grid;
+   place-content: center;
 } 
-.contact-form .contact-x a svg,
-.contact-form .contact-x a {
+.contact-form .contact-x button svg,
+.contact-form .contact-x button {
     background: transparent;
     border: 2px solid transparent;
     border-radius: 50%;
@@ -1166,7 +975,8 @@ input.form-control.input-group-inset.input-group-inset-after {
     font-weight:400;
     height: 30px;
     width: 30px;
-    display: inline-block;
+    display: grid;
+    place-content: center;
     color: #ffc65c;
     padding: 0px;
 
@@ -1175,6 +985,9 @@ input.form-control.input-group-inset.input-group-inset-after {
     font-size:20px;
     line-height:1.5;
     text-align:left;
+    font-weight:300;
+    margin-left:auto;
+    margin-right:auto;
 }
 .join-us-form-modal-container .form-intro h2{
    margin-bottom:26px;
@@ -1183,10 +996,10 @@ input.form-control.input-group-inset.input-group-inset-after {
     margin-bottom:39px;
 }
 
-.contact-form .contact-x a:focus svg,
-.contact-form .contact-x a:hover svg,
-.contact-form .contact-x a:focus,
-.contact-form .contact-x a:hover{
+.contact-form .contact-x button:focus svg,
+.contact-form .contact-x button:hover svg,
+.contact-form .contact-x button:focus,
+.contact-form .contact-x button:hover{
     background: #ffc65c;
     border-color: #ffc65c;
     border-radius: 50%;
@@ -1197,11 +1010,11 @@ input.form-control.input-group-inset.input-group-inset-after {
     color:#112746;
     text-decoration:none;
 }
-.contact-form .contact-x a:focus-visible{
+.contact-form .contact-x button:focus-visible{
     outline:none;
 }
 .join-us-form .join-x svg,
- .join-us-form .join-x a{
+ .join-us-form .join-x button{
     width:24px;
     background: transparent;
     border: 2px solid transparent;
@@ -1216,22 +1029,23 @@ input.form-control.input-group-inset.input-group-inset-after {
     font-weight:400;
     height: 30px;
     width: 30px;
-    display: inline-block;
     color: #ffc65c;
     padding: 0px;
     border: 2px solid #0000;
 }
-.contact-x a span,
-.join-us-form .join-x a span{
+.join-us-form .join-x button span{
     position:absolute;
     display:inline-block;
     left:50%;
     transform:translateX(-50%);
 }
-.join-us-form .join-x a:focus svg,
-.join-us-form .join-x a:hover svg,
-.join-us-form .join-x a:focus,
-.join-us-form .join-x a:hover{
+.contact-form .contact-x button span{   /* centred by the button's grid + place-content, no offsets */
+    display:block;
+}
+.join-us-form .join-x button:focus svg,
+.join-us-form .join-x button:hover svg,
+.join-us-form .join-x button:focus,
+.join-us-form .join-x button:hover{
      background: #ffc65c;
     border-color: #ffc65c;
     border-radius: 50%;
@@ -1242,7 +1056,7 @@ input.form-control.input-group-inset.input-group-inset-after {
     color:#112746;
     text-decoration:none;
 }
-.join-us-form .join-x a:focus-visible{
+.join-us-form .join-x button:focus-visible{
     outline:none;
 }
 
@@ -1295,7 +1109,7 @@ border: 2px solid#d90280;
  .join-us-form .position-relative.row:first-of-type .form-group{
             padding:0;
 }
-.join-us-form .portlet-forms form input {
+:is(.contact-form, .join-us-form) .portlet-forms form input {
         height: 48px;
         padding: 0 15px;
 }    
@@ -1348,23 +1162,18 @@ border: 2px solid#d90280;
     text-decoration:underline;
     outline:none;
 }
- .contact-form-modal-container .portlet-layout .portlet-header{
+#contact-form-emails-container .office-email-addresses{
+    display:flex;
+    flex-direction:column;
+    margin:40px 0;
+    gap:20px;
+    justify-content:center;
+}
+/* the gap now does the spacing: drop the 37px bottom margin the stacked <p>s carried */
+#contact-form-emails-container .office-email-addresses p{
     margin-bottom:0;
 }
-/* editing mode */
-.open-admin-panel .contact-form-modal-container svg, .open-admin-panel .join-us-form-modal-container svg {
-    width: 40px;
-}
-.open-admin-panel .contact-form-modal-container, .open-admin-panel .join-us-form-modal-container {
-    background: #eee;
-    border-top: 3px solid lightblue;
-    border-bottom: 3px solid lightblue;
-    width: 100%;
-    position: relative;
-    /* margin-left: 117%; */
-    transform: none;
-}
-
+ 
 .contact-form .portlet-forms form .form-group.has-error input,
 .join-us-form .portlet-forms form .form-group.has-error input {
   resize:none;
@@ -1372,11 +1181,16 @@ border: 2px solid#d90280;
 .contact-form textarea.ddm-field-text.form-control,
 .join-us-form textarea.ddm-field-text.form-control{
    resize:none;
-
 }
 
 .contact-form .form-group{
     border:0 !important;
+    margin-bottom:0;             /* Join Us rows have none; this was making each contact row taller than its input */
+}
+.contact-form .input-group,
+.contact-form .input-group-item{
+    margin:0;
+    padding:0;
 }
 
 /* form error */
@@ -1434,50 +1248,14 @@ border: 2px solid#d90280;
     display: flex;
     justify-content: center;
 }
-.button.join-team a:hover,
-.button.join-team a:focus,
-.button.contact-button a:hover,
-.button.contact-button a:focus{
+.button.join-team button:hover,
+.button.join-team button:focus,
+.button.contact-button button:hover,
+.button.contact-button button:focus{
     outline:none;
 }
-.test-logo-offset{
-position:fixed;
-top:80px;
-background:black;
-padding:10px;
-color:#fff;
-left:10%;
-z-index:4;
-}
-.test-tagline-on-trigger{
-position:fixed;
-top:80px;
-background:black;
-padding:10px;
-color:#fff;
-left:30%;
-z-index:4;
-}
-.test-tagline-off-trigger{
-position:fixed;
-top:80px;
-background:black;
-padding:10px;
-color:#fff;
-left:50%;
-z-index:4;
-}
-/*
-.form-builder-layout > .ddm-form-page div:nth-child(7) .ddm-label {
-    color: #d90280;
-    display: inline-block;
-    font-size: 16px;
-    margin-left: 16px;
-    text-shadow: none;
-    height: 45px;
-    line-height: 45px;
-}
-*/
+
+
  .input-group-inset:focus ~ .input-group-inset-item-after{
     background:transparent !important;
 }
@@ -1531,17 +1309,6 @@ z-index:4;
     }
 }
 
-/* See below:  In admin view when the Product Menu is open (Left menu for editing content, pages, etc) 
-entire page shifts right by 160px, except for the LOGO.  This allows the logo - which has "fixed position" 
-to shift witht the rest of the page
-*/ 
-
-.product-menu-open .logo{
-   transform: translateX(calc(-50% + 160px));
-}
-.product-menu-open .tagline{
-    transform: translate(calc(50% + 160px), -50%);    
-}
 .logo{
     transition:transform 0.56s
 }
@@ -1612,13 +1379,13 @@ a:hover [data-icon-2]::before
 .left-contact-button{
     display:none;
     position:sticky;
-    transform: rotate(-90deg) translateX(15%);
+    /* transform: rotate(-90deg) translateX(15%);  was inert while this was an inline <a>; on a <button> it would become the containing block of the position:fixed spans */
     left: calc(50vw - 94px - 450px - 180px)!important;
     top: unset;
     position:unset;
     z-index:4;
-    width:160px;
-    height:40px;
+    width:0;  /* was 160px; ignored on an inline <a> */
+    height:0; /* was 40px; ignored on an inline <a> */
     z-index:5;
     transition: color 0s ease-in, background 0.4s linear, border 0.4s linear 0.2s;
     }
@@ -1696,12 +1463,12 @@ a:hover [data-icon-2]::before
     border-color:transparent;
     transition: color 0s ease-in, background 0.4s linear,border 0.4s linear 0.2s;
 }
-#section-3 .contact-button a.inactive,
-#section-4 .contact-button a.inactive,
-#section-5 .contact-button a.inactive,
-#section-6 .contact-button a.inactive,
-#section-4 .button.join-team a.inactive,
-#section-6 .button.join-team a.inactive{
+#section-3 .contact-button button.inactive,
+#section-4 .contact-button button.inactive,
+#section-5 .contact-button button.inactive,
+#section-6 .contact-button button.inactive,
+#section-4 .button.join-team button.inactive,
+#section-6 .button.join-team button.inactive{
     background:transparent !important;
     color:#ffc65c !important;
     border-color:#ffc65c !important;
@@ -1969,38 +1736,8 @@ div#join-us-form-dropdown li button {
 .btn-primary:not(:disabled):not(.disabled):active:focus, .btn-primary:not(:disabled):not(.disabled).active:focus, .nav-underline .tab.active a.btn-primary:not(:disabled):not(.disabled):focus, .show > .btn-primary.dropdown-toggle:focus{
     box-shadow:none;
 }
-div.nav-toggle-container{
-    display:none;/* Hide */
-    position: absolute;
-    top:40px;
-    right:20px;
-    width: 26px;
-    height:20px;
-    padding:10px;
-    border: 2px solid transparent;
-    border-bottom-width:5px;
-    box-sizing: content-box;
-    border-radius:25px;
-    z-index:6;
-}
 
-div.nav-toggle-container:hover,
-div.nav-toggle-container:focus-within{
-    background:#ffc65c;
-    border-color:#ffc65c;
-}
-div.nav-toggle-container:hover button.navbar-toggler span.navbar-toggler-icon-line,
-div.nav-toggle-container:focus-within button.navbar-toggler span.navbar-toggler-icon-line{
-    background-color:#122746;
-}
-div.nav-toggle-container.open:hover button.navbar-toggler span.navbar-toggler-icon-line.icon-line-1,
-div.nav-toggle-container.open:hover button.navbar-toggler span.navbar-toggler-icon-line.icon-line-2,
-div.nav-toggle-container.open:hover button.navbar-toggler span.navbar-toggler-icon-line.icon-line-3,
-div.nav-toggle-container.open:focus-within button.navbar-toggler span.navbar-toggler-icon-line.icon-line-1,
-div.nav-toggle-container.open:focus-within button.navbar-toggler span.navbar-toggler-icon-line.icon-line-2,
-div.nav-toggle-container.open:focus-within button.navbar-toggler span.navbar-toggler-icon-line.icon-line-3{
-    background-color:#122746;
-}
+
 div#bruze-nav ul li:hover,
 div#bruze-nav ul li:focus-within{
     outline:none;
@@ -2064,9 +1801,6 @@ div#bruze-nav ul li a:focus{
         left:calc(5vw + 77px)!important;
         top:50vh !important;
     }
-  div.nav-toggle-container{
-    justify-content:center;
-  }
 }
  @media screen and (max-width:1200px){
      .icon-bruze-logo-lg{
@@ -2074,7 +1808,7 @@ div#bruze-nav ul li a:focus{
          margin:0 0 0 -25px;
      }
   
-        ul#team-leads li a:focus {
+        ul#team-leads li button:focus {
             outline:none;
         }   
         #section-6 {
@@ -2176,15 +1910,7 @@ div#bruze-nav ul li a:focus{
 
         .linesAdded .content .line{
             transition:opacity 1s linear, transform 1s ease-out;
-        }
-     
-         .has-control-menu .portlet > .portlet-topper{
-            left:unset;
-            right:0;
-            top:0;
-            z-index:20;
-        }
-      
+        } 
     }
    
     @media all and (max-width: 768px){
@@ -2195,15 +1921,13 @@ div#bruze-nav ul li a:focus{
             font-size:20px;
             line-height:1.5;
         }
-        #section-7 li, #section-7 li span, #section-7 li p, #section-7 li a{
+        #section-7 li, #section-7 li span, #section-7 li p, #section-7 li a, #section-7 li button{
             font-size:14.5px;
             color:#fff;
             font-family:'Lato';
             font-weight:300;
         }
-       .has-control-menu .join-us-form .join-us-form-modal-container section.portlet header{
-            top:16px;
-        }
+    
         .contact-form .contact-form-modal-container,
         .join-us-form .join-us-form-modal-container{
             padding:0 45px 85px 45px;
@@ -2262,14 +1986,12 @@ div#bruze-nav ul li a:focus{
         }
     }
 
-/* ===== from <style> at original line 3733 ===== */
     #section-2 {
         min-height:calc(100vh);
         padding:120px 0;
         box-sizing:content-box;
     }
 
-/* ===== from <style> at original line 3939 ===== */
         #section-3 {
             display: flex;
             flex-direction:column;
@@ -2313,9 +2035,7 @@ div#bruze-nav ul li a:focus{
             margin-bottom:48px;
             height: auto;
         }
-        #section-3 .button.contact-button.contact-button-mobile{
-            display:none;
-        }
+      
          #section-3 .button.contact-button.contact-button-desktop{
             position: absolute;
             right: 0;
@@ -2344,11 +2064,9 @@ div#bruze-nav ul li a:focus{
             }  
         }
 
-/* ===== from <style> at original line 4016 ===== */
         /* ---- reset ---- */
         /*body{ margin:0; font:normal 75% Arial, Helvetica, sans-serif; }*/ canvas{ display: block; vertical-align: bottom; } /* ---- particles.js container ---- */ #particles-js{ position:absolute; width: 100%; height: 100%; background-color: #112746; background-image: url(""); background-repeat: no-repeat; background-size: cover; background-position: 50% 50%; } /* ---- stats.js ---- */ .count-particles{ background: #112746; position: absolute; top: 48px; left: 0; width: 80px; color: #13E8E9; font-size: .8em; text-align: left; text-indent: 4px; line-height: 14px; padding-bottom: 2px; font-family: Helvetica, Arial, sans-serif; font-weight: bold; } .js-count-particles{ font-size: 1.1em; } #stats, .count-particles{ -webkit-user-select: none; margin-top: 5px; margin-left: 5px; } #stats{ border-radius: 3px 3px 0 0; overflow: hidden; } .count-particles{ border-radius: 0 0 3px 3px; }
 
-/* ===== from <style> at original line 4317 ===== */
     #section-4 {
         /*padding:190px 0;*/
         padding:10px 0;
@@ -2399,41 +2117,7 @@ div#bruze-nav ul li a:focus{
     #section-4.overlay-effect{
       /*  z-index:6;   */
     }
-    .overlay-teams{
-        display:none;
-        position: fixed;
-        background: #d7028080;
-         -webkit-backdrop-filter: blur(3px);
-        backdrop-filter: blur(3px);
-        background-color: rgba(217,2,128,0.5);
-        /*animation: showoverlay 0.6s forwards;
-       will-change: transform, opacity, backdrop-filter;
-       */
-        width: 100vw;
-        height: 5000vh;
-        max-height: 100%;
-        z-index: 10;
-        width: 200vw;
-        left: -50%;
-        top: 0;
-    }
-    .overlay-teams.show{
-        display:block;
-        position: fixed;
-        background: #d7028080;
-         -webkit-backdrop-filter: blur(3px);
-        backdrop-filter: blur(3px);
-        background-color: rgba(217,2,128,0.5);
-       /* animation: showoverlay 0.6s forwards;
-        will-change: transform, opacity, backdrop-filter;*/
-        width: 100vw;
-        height: 5000vh;
-        max-height: 100%;
-        z-index: 10;
-        width: 200vw;
-        left: -50%;
-        top: 0;
-    }
+    
 
     ul#team-leads {
         width:892px;
@@ -2453,7 +2137,7 @@ div#bruze-nav ul li a:focus{
     ul#team-leads li{
         z-index:unset;
     }
-    ul#team-leads li a{
+    ul#team-leads li button{
         color:#fff;
         text-decoration:none;
         width:100%;
@@ -2463,13 +2147,14 @@ div#bruze-nav ul li a:focus{
     #section-4 #team-leads p{
         line-height:1.5 !important;
     }
-    ul#team-leads a:hover p,
-    ul#team-leads a:hover strong,
-    ul#team-leads a:focus{
+    ul#team-leads button:hover p,
+    ul#team-leads button:hover strong,
+    ul#team-leads button:focus{
         color:#ffc65c;
         text-decoration:none;
     }
     .team-member-card{
+        border:0;   
         position:fixed;
         background: #112746;
         padding:124px 45px 135px 45px;
@@ -2483,6 +2168,9 @@ div#bruze-nav ul li a:focus{
         height:100%;
         overflow-y:scroll;
     }
+     :where(dialog.team-member-card){
+        right:auto;
+     }
    
     .team-member-card.show{
         animation:showbio 1s forwards;
@@ -2553,7 +2241,7 @@ div#bruze-nav ul li a:focus{
         bottom: unset;
         margin: 0;
     }
-    .team-member-card-x a:hover{
+    .team-member-card-x button:hover{
        cursor:pointer;
     }
 
@@ -2669,7 +2357,7 @@ div#bruze-nav ul li a:focus{
                 transform:translateX(0);
             }
         }
-      @media screen and (min-width:625px)  and (max-width: 1010px) and (min-height:1010px) and (orientation:portrait),
+    @media screen and (min-width:625px)  and (max-width: 1010px) and (min-height:1010px) and (orientation:portrait),
              screen and (min-width:625px) and (device-height:1024px) and (orientation:portrait){/*portrait ipad etc*/
          li.team-lead-on .team-member-card {
             width:535px;/*495*//*585*/
@@ -2892,11 +2580,6 @@ div#bruze-nav ul li a:focus{
             text-align:left;
         }
 
-        .has-control-menu .team-member-card-x{
-            top:unset;
-            margin-top:20px;
-        }      
-      
         #section-4 .button.join-team-desktop{
             display:none;
         }
@@ -2917,7 +2600,7 @@ div#bruze-nav ul li a:focus{
           left:unset;
           transform:none;
         }
-        #section-4 .button.join-team a {
+        #section-4 .button.join-team button {
 
         }
         #section-4 ul li.team-member-card-x span{
@@ -2962,7 +2645,7 @@ div#bruze-nav ul li a:focus{
     }
      .contact-form-modal-container, .join-us-form-modal-container,
     .team-member-card{
-       < /* display: none;  Chrome Safari */
+       /* display: none;  Chrome Safari */
         scrollbar-width: none; /* Firefox */
         -ms-overflow-style: none;  /* IE 10+ */   
     }
@@ -2975,7 +2658,6 @@ div#bruze-nav ul li a:focus{
         -ms-overflow-style: none;  /* IE 10+ */
     }
 
-/* ===== from <style> at original line 5264 ===== */
     #section-5 {
         display: flex;
         flex-direction:column;
@@ -3003,7 +2685,7 @@ div#bruze-nav ul li a:focus{
         right:0;
         position:absolute
     }
-    #section-5 .button.contact-button a{
+    #section-5 .button.contact-button button{
         right: 0;
         top: 50%;
         transform: translateY(-50%);
@@ -3070,7 +2752,7 @@ div#bruze-nav ul li a:focus{
         width:auto;
         height:auto;
     }
-    #section-5 ul#dots li a span {
+    #section-5 ul#dots li button span {
         border:2px solid #fcc65c;
         border-radius:50%;
         padding-top:14px;
@@ -3088,25 +2770,25 @@ div#bruze-nav ul li a:focus{
         height:30px;
        
     }
-    #section-5 ul#dots li a {
+    #section-5 ul#dots li button {
         padding:3px;
         height:24px;
         width:24px;
     }
-    #section-5 ul#dots li a:hover,
-    #section-5 ul#dots li a:focus,
-    #section-5 ul#dots li.selected a {
+    #section-5 ul#dots li button:hover,
+    #section-5 ul#dots li button:focus,
+    #section-5 ul#dots li.selected button {
         outline:none;
         height:30px;
         width:30px;
         padding:0;
     }
-    #section-5 ul#dots li a:hover span,
-    #section-5 ul#dots a:focus span {
+    #section-5 ul#dots li button:hover span,
+    #section-5 ul#dots button:focus span {
         background:#ffc65c;
         transition:background 0.4s linear;
     }
-    #section-5 ul#dots li.selected a span {
+    #section-5 ul#dots li.selected button span {
         background:#ffc65c;
     }
     .bruze-main-assets ul#dots {
@@ -3154,7 +2836,7 @@ div#bruze-nav ul li a:focus{
             height:40px;
             margin:0;
         }
-         #section-5 .button.contact-button.contact-button-mobile a{
+         #section-5 .button.contact-button.contact-button-mobile button{
             top: unset;
             right: unset;
             position: relative;
@@ -3204,7 +2886,7 @@ div#bruze-nav ul li a:focus{
             height:30px;
             width:38px;
         }
-        #section-5 ul#dots li a span{
+        #section-5 ul#dots li button span{
             padding-top:21px;
             width:21px;
         }
@@ -3266,7 +2948,6 @@ div#bruze-nav ul li a:focus{
         }
     }
 
-/* ===== from <style> at original line 5847 ===== */
     #section-6 {
         overflow:hidden;
         display: flex;
@@ -3313,11 +2994,11 @@ div#bruze-nav ul li a:focus{
         position: absolute;
         display:block;
     }
-    #section-6 .button.contact-button.contact-button-desktop a{
+    #section-6 .button.contact-button.contact-button-desktop button{
         top:unset;
     }
-    #section-6 .button.contact-button a:hover, 
-    #section-6 .button.contact-button a:focus{
+    #section-6 .button.contact-button button:hover, 
+    #section-6 .button.contact-button button:focus{
         color:#d90280;
     }
     
@@ -3435,7 +3116,7 @@ div#bruze-nav ul li a:focus{
         #section-6 .button.contact-button{
             float: none;
         }
-        #section-6 .button.contact-button a{
+        #section-6 .button.contact-button button{
             bottom:unset;
             position: absolute;
             left: unset;
@@ -3529,43 +3210,23 @@ div#bruze-nav ul li a:focus{
         margin-bottom: 52px;
         width: 100px;
     }
-    #section-6 .parallax-window{
-        position:absolute;
-        top:0;
-        left:0;
-        width:100%;
-        height:100%;
-        /*min-height:calc(100vw * 0.75);*/
-        /*min-height:calc(100% + 100px);*/
-        background-color:transparent;
-        background-image:url('../images/clients.jpg');
-        background-position:center;
-        background-size:cover;
-        background-repeat:no-repeat;
-        opacity:0.15;
-    }
+  
 
-    .lower-cover {
-        width: 100%;
-        height: 100vh;
-        background: #fcc;
-        position: absolute;
-        top: 150px;
-        opacity: 0.5;
-    }
 
-/* ===== from <style> at original line 6901 ===== */
 #section-7 span.section-7:focus{
     outline:none;
 }
-#section-7 span.section-7 a {
+#section-7 span.section-7 a,
+#section-7 span.section-7 button {
     text-decoration: none;
 }
 #section-7 span.section-7 a.section-7 {
     text-decoration: none !important;
 }
 #section-7 span.section-7 a:hover,
-#section-7 span.section-7 a:focus {
+#section-7 span.section-7 button:hover,
+#section-7 span.section-7 a:focus,
+#section-7 span.section-7 button:focus {
     text-decoration: underline !important;
 }
 
@@ -3620,17 +3281,69 @@ div#bruze-nav ul li a:focus{
   font: 400 16px/1.4 'Lato', sans-serif;
   color: #ffc65c;
 }
-.recaptcha-note {
-  margin: 1rem 1rem 2rem 1rem;
+/* .contact-form p / .join-us-form p (font shorthand, 16px) outranks a bare .recaptcha-note, so the note is scoped to match */
+.contact-form .recaptcha-note,
+.join-us-form .recaptcha-note {
+  
   text-align: center;
-  font-family: 'Lato', sans-serif;
-  font-size: 12px;
-  line-height: 1.4;
+  font: 400 11px / 1.4 'Lato', sans-serif;
   color: #d90280;
 }
+.join-us-form .recaptcha-note {
+    margin: 45px 1rem 2rem 1rem;
+}
+.contact-form .recaptcha-note {
+  margin: 0 1rem;            /* sits last in the contact dialog, under the office email addresses */
+}
 .recaptcha-note a {
-    font-family: 'Lato', sans-serif;
+    font: inherit;
   color: #d90280;
   text-decoration: underline;
   text-underline-offset: 2px;
+}
+
+dialog::backdrop {
+    background-color: rgba(217, 2, 128, 0.5);
+    -webkit-backdrop-filter: blur(3px);
+    backdrop-filter: blur(3px);
+}
+/* form modals: backdrop fades with the slide (.show added after open, .closing added before close) */
+.contact-form-modal-container::backdrop,
+.join-us-form-modal-container::backdrop {
+    opacity: 0;
+    transition: opacity 0.4s;
+}
+.contact-form-modal-container.show::backdrop,
+.join-us-form-modal-container.show::backdrop {
+    opacity: 1;
+}
+.contact-form-modal-container.closing::backdrop,
+.join-us-form-modal-container.closing::backdrop {
+    opacity: 0;
+}
+/* slide-out: .show stays on (keeps left/margin/right), only the transform returns to the off-screen position */
+.contact-form .contact-form-modal-container.show.closing,
+.join-us-form .join-us-form-modal-container.show.closing {
+    transform: translateX(-100%);
+}
+.screens { position: relative; margin: 0 -15px; }
+
+
+#contact-form-emails-container .office-email-addresses {
+    display: flex;
+    flex-direction: column;
+    margin: 45px 0;
+    gap: 32px;
+    justify-content: center;
+}
+.email-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+}
+#contact-form-emails-container .office-email-addresses p {
+    margin: 0;
+    /* line-height: 0; */
+    text-box-trim: trim-both;
 }

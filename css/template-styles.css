@@ -907,6 +907,12 @@ input.form-control.input-group-inset.input-group-inset-after {
     color:#fff;
     font-family:'Lato';
     font-weight:300;
+    background: transparent;
+    border:0;
+
+    button {
+        padding:0;
+    }
 }
 #section-7 li a:focus,
 #section-7 li button:focus{
@@ -3347,3 +3353,4 @@ dialog::backdrop {
     /* line-height: 0; */
     text-box-trim: trim-both;
 }
+

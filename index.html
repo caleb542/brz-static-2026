@@ -193,6 +193,7 @@
         });
         $(".contact-button button,.left-contact-button, button.contact-us").on("click", function(e) {
             e.preventDefault();
+            window.dialogOpener = this;      // focus returns here when the modal closes
             $(this).addClass("inactive");
             $(".click-origin").removeClass("click-origin");
             var target = e.target;
@@ -257,6 +258,14 @@
             });
             if (window.position !== undefined) { $(window).scrollTop(window.position); }
             thaw();
+            // The browser's own focus restore runs inside close(), while <body> is still inert, so it fails and focus
+            // drops to the browser chrome. Restore it here, after thaw(). The left button (tabindex -1, aria-hidden)
+            // is pointer-only and shows its :focus state, so it is skipped.
+            var opener = window.dialogOpener;
+            window.dialogOpener = null;
+            if (opener && opener.isConnected && !$(opener).is(".left-contact-button")) {
+                opener.focus({ preventScroll: true });
+            }
         });
 
         // Focus trap for every open dialog: Tab wraps from the last control to the first (and Shift+Tab the reverse),
@@ -279,6 +288,7 @@
         });
         $(".join-team button").on("click", function(e) {
             e.preventDefault();
+            window.dialogOpener = this;      // focus returns here when the modal closes
             window.originHash = getHash();
             window.position = $(window).scrollTop();
             $(".click-origin").removeClass("click-origin");

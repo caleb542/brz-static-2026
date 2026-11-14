@@ -625,7 +625,7 @@ html, body {
         transform: translateY(-50%);
         padding: 40px 0;
     }
-    .bruze-main-assets #section-2 h2{
+    .bruze-main-assets #section-2 strong.unmatched{
         margin-bottom:38px; /*makes 45px space */
     }
     #section-2 .line {
@@ -2962,6 +2962,7 @@ div#bruze-nav ul li a:focus{
         min-height: calc(100vh + 100px);
         box-sizing: content-box;
         background-color:rgba(217,2,128,0.90);
+        background-color: hsl(325 98% 49% / 0.90);
         padding: 0;
         overflow-y:hidden;
         padding:0 0;/* <-- try this on the content container */

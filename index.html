@@ -108,9 +108,9 @@
         })
         window.section2Offset = Math.floor($("#section-2").offset().top);
         window.logoPos = Math.floor($("div.logo").offset().top);
-        window.taglineOnTrigger = Math.floor($("#section-2 .headings-box h2:first-child").offset().top) - $('div.logo').height();
-        window.taglineOffTrigger = Math.floor($("#section-2 .headings-box h2:last-of-type").offset().top);
-        window.taglineOffTriggerHeight = Math.floor($("#section-2 .headings-box h2:last-of-type").height());
+        window.taglineOnTrigger = Math.floor($("#section-2 .headings-box strong:first-child").offset().top) - $('div.logo').height();
+        window.taglineOffTrigger = Math.floor($("#section-2 .headings-box strong:last-of-type").offset().top);
+        window.taglineOffTriggerHeight = Math.floor($("#section-2 .headings-box strong:last-of-type").height());
         window.taglineOffTriggerBottom = window.taglineOffTriggerHeight + window.taglineOffTrigger;
         $(".contact-x button").attr("id", "contact-x");
         $(".join-x button").attr("id", "join-x");
@@ -426,12 +426,13 @@
             <div class="icon-bruze-logo-lg"><!--//--><h1>BRUZE</h1></div>
             <div class="tagline">BACKED BY EXPERIENCE</div>
         </div>
+        
         <div class="headings-box">
-            <h2>UNMATCHED EXPERIENCE</h2>
+            <strong class="unmatched">UNMATCHED EXPERIENCE</strong>
             <div class="line"></div>
-            <h2>SMALL, AGILE AND FOCUSED</h2>
+            <strong class="unmatched">SMALL, AGILE AND FOCUSED</strong>
             <div class="line"></div>
-            <h2>BUILT TO DELIVER</h2>
+            <strong class="unmatched">BUILT TO DELIVER</strong>
         </div>
     </div>
 </div>
@@ -594,7 +595,7 @@
                 </div>
                 <ul class="row" id="team-leads">
                     <li class="col-xs-12 col-sm-6 col-md-6 col-lg-3 no-focus">
-                        <button type="button" aria-label="Open profile of Christopher Blyth">
+                        <button type="button" aria-label="CHRIS FOUNDER, STRATEGY & CREATIVE">
                             <span style="background-image:url('images/chris.jpg')"></span>
                             <strong>CHRIS</strong>
                             <p class="job-position">FOUNDER, STRATEGY<br>& CREATIVE</p>
@@ -623,7 +624,7 @@
                         </dialog>
                     </li>
                     <li class="col-xs-12 col-sm-6 col-md-6 col-lg-3 no-focus">
-                        <button type="button" aria-label="Open profile of Gabriel Logan-Wright">
+                        <button type="button" aria-label="GABE FOUNDER, TECH & DEVELOPMENT">
                             <span style="background-image:url('images/gabe.jpg')"></span>
                             <strong>GABE</strong>
                             <p class="job-position">FOUNDER, TECH<br>& DEVELOPMENT</p>
@@ -651,7 +652,7 @@
                         </dialog>
                     </li>
                     <li class="col-xs-12 col-sm-6 col-md-6 col-lg-3 no-focus">
-                        <button type="button" aria-label="Open profile of Caleb Hamilton">
+                        <button type="button" aria-label="CALEB CMS DEVELOPMENT & SUPPORT">
                             <span style="background-image:url('images/caleb.jpg')"></span>
                             <strong>CALEB</strong>
                             <p class="job-position">CMS DEVELOPMENT<br>& SUPPORT</p>
@@ -679,7 +680,7 @@
                         </dialog>
                     </li>
                     <li class="col-xs-12 col-sm-6 col-md-6 col-lg-3 no-focus">
-                        <button type="button" aria-label="Open profile of Jason Maxwell">
+                        <button type="button" aria-label="JASON PROJECT MANAGEMENT & ANALYSIS">
                             <span style="background-image:url('images/jason.jpg')"></span>
                             <strong>JASON</strong>
                             <p class="job-position">PROJECT MANAGEMENT<br>& ANALYSIS</p>
@@ -780,7 +781,7 @@
         <div class="line"></div>
         <p>We believe in partnership. It's been the driving philosophy at Bruze for over 15 years. Technologies change, focuses shift and budgets get reallocated, but partners should be steadfast.</p><p>We believe the best partners complement your process, providing feedback on ways to adjust and improve the deliverables. The best partners are flexible and adapt their documentation and methodology to enhance your goals. The best partners hit at the core of your specific opportunity and work with you to devise a thoughtful plan to exceed your audiences' expectations, always on time and always on budget.</p><p>Experience has taught us the best partners always deliver. This is what we believe and how we approach every interaction.</p>
             <div class="icon-bruze-logo-sm"><span>BRUZE</span></div>
-                <div class="testimonials" role="region" aria-roledescription="carousel">
+                <div class="testimonials" role="region" aria-label="Client testimonials" aria-roledescription="carousel">
                     <ul id="testimonials">
                             <li role="presentation" aria-roledescription="slide" aria-label="1 of 3" aria-hidden="false" class="selected">
                             <blockquote>
@@ -1444,7 +1445,7 @@ FOR THIS INDUSTRY. BRUZE KNOCKED IT OUT OF THE PARK."
                                                                     <div class="col-ddm col-md-12" data-ddm-field-column="0" data-ddm-field-page="0" data-ddm-field-row="2">
                                                                         <div class="ddm-field" data-field-name="PhoneNumber">
                                                                         <div class="form-group" data-field-name="PhoneNumber">
-                                                                            <input name="PhoneNumber" type="text" class="form-control" placeholder="Phone Number" aria-label="Phone number" value="">
+                                                                            <input name="PhoneNumber" type="tel" class="form-control" placeholder="Phone Number" aria-label="Phone number" value="">
                                                                         </div>
                                                                         </div>
                                                                     </div>
@@ -1462,7 +1463,7 @@ FOR THIS INDUSTRY. BRUZE KNOCKED IT OUT OF THE PARK."
                                                                                 <svg class="lexicon-icon" role="presentation" viewBox="0 0 512 512"><path d="M323.6,190l146.7-48.8L512,263.9l-149.2,47.6l93.6,125.2l-104.9,76.3l-96.1-126.4l-93.6,126.4L56.9,435.3l92.3-123.9L0,263.8l40.4-122.6L188.4,190v-159h135.3L323.6,190L323.6,190z"></path></svg>
                                                                             </span>
                                                                             </p>
-                                                                            <input name="Email" type="text" class="form-control ddm-field-text" placeholder="Email Address *" aria-label="Email address" value="" required >
+                                                                            <input name="Email" type="email" class="form-control ddm-field-text" placeholder="Email Address *" aria-label="Email address" value="" required >
                                                                         </div>
                                                                         </div>
                                                                     </div>
@@ -1629,7 +1630,7 @@ FOR THIS INDUSTRY. BRUZE KNOCKED IT OUT OF THE PARK."
                                     <div class="ddm-field" data-field-name="Field85138148">
                                       <div class="form-group" data-field-name="Field85138148">
                                         <p class="ddm-label">Email<span class="reference-mark"><svg class="lexicon-icon" role="presentation" viewBox="0 0 512 512"><path d="M323.6,190l146.7-48.8L512,263.9l-149.2,47.6l93.6,125.2l-104.9,76.3l-96.1-126.4l-93.6,126.4L56.9,435.3l92.3-123.9L0,263.8l40.4-122.6L188.4,190v-159h135.3L323.6,190L323.6,190z"></path></svg></span></p>
-                                        <input name="Email" type="text" class="form-control ddm-field-text" placeholder="Email" aria-label="Email address" value="" required>
+                                        <input name="Email" type="email" class="form-control ddm-field-text" placeholder="Email" aria-label="Email address" value="" required>
                                       </div>
                                     </div>
                                   </div>
@@ -1643,7 +1644,7 @@ FOR THIS INDUSTRY. BRUZE KNOCKED IT OUT OF THE PARK."
                                     <div class="ddm-field" data-field-name="Field07239228">
                                       <div class="form-group" data-field-name="Field07239228">
                                         <p class="ddm-label">Phone Number</p>
-                                        <input name="PhoneNumber" type="text" class="form-control" placeholder="Phone Number" aria-label="Phone number" value="" >
+                                        <input name="PhoneNumber" type="tel" class="form-control" placeholder="Phone Number" aria-label="Phone number" value="" >
                                       </div>
                                     </div>
                                   </div>
@@ -1676,7 +1677,7 @@ FOR THIS INDUSTRY. BRUZE KNOCKED IT OUT OF THE PARK."
                                     <div class="ddm-field" data-field-name="Field73298653">
                                       <div class="form-group" data-field-name="Field73298653">
                                         <p class="ddm-label"><span class="reference-mark"><svg class="lexicon-icon" role="presentation" viewBox="0 0 512 512"><path d="M323.6,190l146.7-48.8L512,263.9l-149.2,47.6l93.6,125.2l-104.9,76.3l-96.1-126.4l-93.6,126.4L56.9,435.3l92.3-123.9L0,263.8l40.4-122.6L188.4,190v-159h135.3L323.6,190L323.6,190z"></path></svg></span></p>
-                                        <input name="CVLink" type="text" class="form-control ddm-field-text" placeholder="Link to CV (LinkedIn, website, etc.)" aria-label="Link to CV (LinkedIn, website, etc.)" value="">
+                                        <input name="CVLink" type="url" class="form-control ddm-field-text" placeholder="Link to CV (LinkedIn, website, etc.)" aria-label="Link to CV (LinkedIn, website, etc.)" value="">
                                       </div>
                                     </div>
                                   </div>

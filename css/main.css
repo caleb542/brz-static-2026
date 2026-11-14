@@ -272,17 +272,18 @@ button.btn-monospaced.ml-auto.navbar-toggler:focus {
     padding: 40px 0
 }
 
-.bruze-main-assets #section-2 h2 {
+.bruze-main-assets #section-2 strong.unmatched {
     font-family: 'Din',sans-serif;
     font-size: 24px;
     margin-bottom: 50px;
     display: block;
     width: 100%;
     font-style: italic;
-    color: #112746
+    color: #112746;
+    margin-bottom:38px;
 }
 
-.bruze-main-assets #section-2 h2:last-child {
+.bruze-main-assets #section-2 strong.unmatched:last-child {
     margin-bottom: 0
 }
 
